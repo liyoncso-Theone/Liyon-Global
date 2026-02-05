@@ -34,7 +34,7 @@
 
 ## 🚀 部署
 本專案託管於 GitHub Pages。
-網址：`https://liyoncso-theone.github.io/`
+網址：`https://liyoncso-theone.github.io/Liyon-Global/`
 
 ---
 © 2026 LIYON Global. Designed with Intelligence. Rooted in Truth.

@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>立盈國際 LIYON Global | AI Automation Agency</title>
     <meta name="description" content="不賣工時，只賣結果。LIYON 協助企業利用 AI 語音智能體、RAG 知識庫與 n8n 自動化工作流，建立高利潤商業護城河。">
-    
+
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="立盈國際 LIYON Global | AI Automation Agency">
+    <meta property="og:description" content="不賣工時，只賣結果。LIYON 協助企業利用 AI 語音智能體、RAG 知識庫與 n8n 自動化工作流，建立高利潤商業護城河。">
+    <meta property="og:image" content="https://liyoncso-theone.github.io/images/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://liyoncso-theone.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- 設定品牌色與字體 -->
     <script>
         tailwind.config = {
@@ -39,14 +48,18 @@
             }
         }
     </script>
-    
+
     <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
     <style>
         /* 自定義樣式補充 */
-        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
-        
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+
         /* 玻璃擬態 (Glassmorphism) */
         .glass-card {
             background: rgba(26, 58, 94, 0.25);
@@ -54,7 +67,7 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(197, 160, 101, 0.1);
         }
-        
+
         .glass-nav {
             background: rgba(12, 35, 64, 0.85);
             backdrop-filter: blur(10px);
@@ -64,10 +77,11 @@
         .bg-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(197, 160, 101, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(197, 160, 101, 0.05) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(197, 160, 101, 0.05) 1px, transparent 1px);
         }
     </style>
 </head>
+
 <body class="bg-liyon-navy text-white antialiased overflow-x-hidden">
 
     <!-- 導航列 (Navbar) -->
@@ -75,27 +89,30 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-8 h-8 rounded-full border-2 border-liyon-gold bg-transparent flex items-center justify-center relative overflow-hidden">
-                    <div class="w-2 h-2 bg-liyon-gold rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-500"></div>
-                </div> 
-                <span class="text-xl font-bold tracking-widest text-white group-hover:text-liyon-gold transition-colors">LIYON</span>
+                <img src="images/logo_nav_v3.png" alt="LIYON Global Logo" class="h-10 w-auto rounded-md shadow-sm">
+                <span
+                    class="text-xl font-bold tracking-widest text-white group-hover:text-liyon-gold transition-colors">LIYON</span>
             </a>
-            
+
             <!-- 選單 (Desktop) -->
             <div class="hidden md:flex gap-8 text-sm text-gray-300 font-medium">
                 <a href="#about" class="hover:text-liyon-gold transition-colors">關於我們</a>
                 <a href="#solutions" class="hover:text-liyon-gold transition-colors">解決方案</a>
                 <a href="#case-study" class="hover:text-liyon-gold transition-colors">成功案例</a>
             </div>
-            
+
             <!-- CTA Button -->
-            <a href="#contact" class="hidden md:block px-5 py-2 border border-liyon-gold text-liyon-gold text-sm font-semibold rounded hover:bg-liyon-gold hover:text-liyon-navy transition-all duration-300 shadow-[0_0_15px_rgba(197,160,101,0.2)] hover:shadow-[0_0_25px_rgba(197,160,101,0.5)]">
+            <a href="#contact"
+                class="hidden md:block px-5 py-2 border border-liyon-gold text-liyon-gold text-sm font-semibold rounded hover:bg-liyon-gold hover:text-liyon-navy transition-all duration-300 shadow-[0_0_15px_rgba(197,160,101,0.2)] hover:shadow-[0_0_25px_rgba(197,160,101,0.5)]">
                 預約 ROI 診斷
             </a>
 
             <!-- Mobile Menu Button (Hamburger) -->
             <button class="md:hidden text-liyon-gold focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
         </div>
     </nav>
@@ -103,40 +120,53 @@
     <!-- 1. Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-grid">
         <!-- 背景光暈 -->
-        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-liyon-gold/10 rounded-full blur-[100px] animate-pulse-slow"></div>
+        <div
+            class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-liyon-gold/10 rounded-full blur-[100px] animate-pulse-slow">
+        </div>
         <div class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px]"></div>
+
+        <!-- LOGO2 Background Visual -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+            <img src="images/logo_hero.webp" alt="Lion Background" class="max-h-[80vh] w-auto object-contain">
+        </div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
             <p class="text-liyon-gold tracking-[0.3em] uppercase mb-6 text-sm font-bold animate-fade-in-up">
-                Strategy & Execution | AI Automation Agency
+                STRATEGY & EXECUTION | AI AUTOMATION AGENCY
             </p>
 
             <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-lg">
                 Stop Renting Your Time.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-liyon-gold to-yellow-200">Build Your Engine.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-liyon-gold to-yellow-200">Build Your
+                    Engine.</span><br>
+                <span class="block text-3xl md:text-5xl mt-4 text-white">不賣工時，只賣結果。</span>
             </h1>
 
             <p class="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                我們協助前 10% 的企業與創作者，利用 <span class="text-white font-medium">AI 語音智能體</span>、<span class="text-white font-medium">RAG 企業大腦</span> 與 <span class="text-white font-medium">n8n 自動化工作流</span>，建立利潤率 90% 以上、與時間脫鉤的商業護城河。
+                我們協助前 10% 的企業與創作者，利用 <span class="text-white font-medium">AI 語音智能體 (Voice Agents)</span>、<span
+                    class="text-white font-medium">RAG 企業大腦</span> 與 <span class="text-white font-medium">n8n
+                    自動化工作流</span>，建立利潤率 90% 以上、與時間脫鉤的商業護城河。
             </p>
 
             <div class="flex flex-col md:flex-row justify-center gap-5">
-                <a href="#contact" class="px-8 py-4 bg-liyon-gold text-liyon-navy font-bold rounded-lg shadow-[0_0_20px_rgba(197,160,101,0.4)] hover:shadow-[0_0_40px_rgba(197,160,101,0.6)] hover:-translate-y-1 transition-all duration-300 text-lg">
+                <a href="#contact"
+                    class="px-8 py-4 bg-liyon-gold text-liyon-navy font-bold rounded-lg shadow-[0_0_20px_rgba(197,160,101,0.4)] hover:shadow-[0_0_40px_rgba(197,160,101,0.6)] hover:-translate-y-1 transition-all duration-300 text-lg">
                     👉 預約 15 分鐘 ROI 診斷
                 </a>
-                <a href="#solutions" class="px-8 py-4 border border-gray-600 text-gray-300 rounded-lg hover:border-liyon-gold hover:text-liyon-gold transition-all duration-300 text-lg">
+                <a href="#solutions"
+                    class="px-8 py-4 border border-gray-600 text-gray-300 rounded-lg hover:border-liyon-gold hover:text-liyon-gold transition-all duration-300 text-lg">
                     探索自動化應用場景
                 </a>
             </div>
-            
-            <p class="mt-4 text-xs text-gray-500">* 限時免費診斷，價值 $500 USD</p>
+
+            <p class="mt-4 text-xs text-gray-500">(點擊開啟郵件，專人審核評估)</p>
         </div>
     </section>
 
     <!-- 2. Brand Manifesto (About) -->
     <section id="about" class="py-24 bg-liyon-dark relative">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            
+
             <!-- Left Visual: Code Waterfall Abstract -->
             <div class="relative h-[500px] rounded-2xl overflow-hidden glass-card border-none shadow-2xl">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-liyon-dark z-10"></div>
@@ -165,27 +195,32 @@
 
             <!-- Right Content -->
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-snug">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-snug text-white">
                     Rooted in <span class="text-liyon-gold">Truth</span>,<br>
                     Overflowing with <span class="text-liyon-gold">Grace</span>.
                 </h2>
+                <h3 class="text-xl text-liyon-gold mb-6 font-medium">立定技術根基，坐擁豐盛盈餘。</h3>
                 <div class="space-y-6 text-gray-400 leading-relaxed">
                     <p>
                         在 2026 年的 AI 巨浪中，大多數人仍受困於「高營收、低利潤」的勞動陷阱。
-                        LIYON 立盈國際相信，真正的商業自由，來自於對 <strong class="text-white">利潤率 (Margin)</strong> 與 <strong class="text-white">槓桿 (Leverage)</strong> 的極致追求。
+                        LIYON 立盈國際相信，真正的商業自由，來自於對 <strong class="text-white">利潤率 (Margin)</strong> 與 <strong
+                            class="text-white">槓桿 (Leverage)</strong> 的極致追求。
                     </p>
                     <ul class="space-y-4 mt-6">
                         <li class="flex items-start">
                             <span class="text-liyon-gold mr-3 mt-1">✦</span>
-                            <span><strong class="text-white">Truth (真理):</strong> 數據不會說謊。我們拒絕憑感覺決策，只相信經過市場驗證的自動化數據與 ROI。</span>
+                            <span><strong class="text-white">Truth (真理)：</strong> 數據不會說謊。我們拒絕憑感覺決策，只相信經過市場驗證的自動化數據與
+                                ROI。</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-liyon-gold mr-3 mt-1">✦</span>
-                            <span><strong class="text-white">Grace (恩典):</strong> 當你將重複性勞動交給 AI，你將獲得「時間的恩典」。這份盈餘，讓你專注於創造不可複製的聲譽資本。</span>
+                            <span><strong class="text-white">Grace (恩典)：</strong> 當你將重複性勞動交給
+                                AI，你將獲得「時間的恩典」。這份盈餘，讓你專注於創造不可複製的聲譽資本。</span>
                         </li>
                     </ul>
                     <p class="mt-8 pt-8 border-t border-gray-800 text-sm font-mono text-liyon-gold">
-                        // We are not vendors. We are your Chief Automation Officers.
+                        // We are not vendors. We are your Chief Automation Officers.<br>
+                        我們不交付「軟體」，我們交付「每天為你省下 3 小時」的系統。
                     </p>
                 </div>
             </div>
@@ -195,8 +230,9 @@
     <!-- 3. Core Solutions -->
     <section id="solutions" class="py-24 bg-liyon-navy relative overflow-hidden">
         <!-- Background Decor -->
-        <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-liyon-gold/30 to-transparent"></div>
-        
+        <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-liyon-gold/30 to-transparent">
+        </div>
+
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
                 <span class="text-liyon-gold text-sm font-bold tracking-widest uppercase">The Productized Service</span>
@@ -207,47 +243,88 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1: Voice AI -->
                 <div class="glass-card p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group">
-                    <div class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
                         <!-- Mic/Phone Icon -->
-                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">Omnichannel AI Receptionist</h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">全渠道獲客智能體 (Voice & Chat)</p>
+                    <p class="text-xs text-gray-500 mb-4">讓你的業務窗口不只會打字，還會「講話」。</p>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>Retell AI 真人語音：</strong> 無情緒波動，24/7 接聽與撥打。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>潛客過濾：</strong> 自動評分，過濾 80% 無效名單。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>多語支援：</strong> 中英日語無縫切換，生意無國界。</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>Retell AI 真人語音：</strong> 無情緒波動，24/7 接聽電話、撥打確認預約。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>潛客過濾 (Lead Qualification)：</strong> 自動依據預算與需求評分，過濾 80% 無效名單。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>多語支援：</strong> 中英日語無縫切換，生意無國界。</span>
+                        </li>
                     </ul>
+                    <p class="mt-4 text-xs text-gray-600 italic">(適合：醫美診所、牙醫、法律事務所)</p>
                 </div>
 
                 <!-- Card 2: RAG & Brain -->
-                <div class="glass-card p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-liyon-gold/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                    <div class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
+                <div
+                    class="glass-card p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-liyon-gold/10 rounded-full blur-2xl -mr-10 -mt-10">
+                    </div>
+                    <div
+                        class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
                         <!-- Database/Brain Icon -->
-                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                            </path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">Enterprise RAG System</h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">企業級知識庫與自動化中樞</p>
+                    <p class="text-xs text-gray-500 mb-4">將破碎的工具鏈串接，並賦予 AI 讀懂你公司所有文檔的能力。</p>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>RAG 知識庫：</strong> 讀懂企業 PDF/報表，精準回答不胡扯。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>自動培育：</strong> 客戶填表後，自動觸發 7 天價值信件。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>隱私保障：</strong> Docker 自託管 (Self-hosted)，數據不外流。</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>RAG 知識庫 (The Brain)：</strong> 餵給 AI 你的 PDF 與報表，精準回答內部或客戶問題，拒絕胡說八道。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>自動培育 (Nurture)：</strong> 客戶填表後，自動觸發 7 天價值信件序列。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>隱私保障：</strong> 採用 Docker 自託管 (Self-hosted) 架構，數據絕不外流。</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Card 3: Content Factory -->
                 <div class="glass-card p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group">
-                    <div class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
+                    <div
+                        class="w-14 h-14 rounded-lg bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
                         <!-- Play/Video Icon -->
-                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-8 h-8 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">Automated Content Factory</h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">指數級內容生產工廠</p>
+                    <p class="text-xs text-gray-500 mb-4">不做創作者，做內容的「策展人」。</p>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>一鍵爆款：</strong> 監控競品，用 NanoBanana + Kling 自動重製。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>數位分身 (Avatar)：</strong> 錄製一次，無限生成口播影片。</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> <strong>自動分發：</strong> 內容一次製作，同步發布至全平台。</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>一鍵爆款重製：</strong> 監控競品表現，利用 NanoBanana + Kling 自動生成高品質視覺。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>數位分身 (Avatar)：</strong> 錄製一次，無限生成口播影片，無需每次重新拍攝。</span>
+                        </li>
+                        <li class="flex items-start"><span class="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span><strong>自動化分發：</strong> 一次製作，自動發布至 IG, YouTube, TikTok 全平台。</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -258,8 +335,9 @@
     <section id="case-study" class="py-24 bg-gray-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center text-white">Client Success</h2>
-            
-            <div class="bg-gradient-to-r from-liyon-navy to-liyon-light rounded-2xl overflow-hidden shadow-2xl border border-liyon-gold/20 flex flex-col md:flex-row">
+
+            <div
+                class="bg-gradient-to-r from-liyon-navy to-liyon-light rounded-2xl overflow-hidden shadow-2xl border border-liyon-gold/20 flex flex-col md:flex-row">
                 <!-- Visual -->
                 <div class="md:w-1/2 bg-black/30 flex items-center justify-center p-10 relative">
                     <!-- 模擬 Dashboard 數據 -->
@@ -277,25 +355,33 @@
                         </div>
                         <div class="border-t border-gray-700 pt-3 flex justify-between text-xs text-gray-300">
                             <span>Cost Saved</span>
-                            <span class="text-white font-bold">$45,000 / yr</span>
+                            <span class="text-white font-bold">1.5 FTEs / yr</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Text -->
                 <div class="md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-                    <span class="text-liyon-gold text-xs font-bold tracking-widest mb-3 uppercase">Top-Tier Aesthetic Clinic</span>
+                    <span class="text-liyon-gold text-xs font-bold tracking-widest mb-3 uppercase">Top-Tier Aesthetic
+                        Clinic</span>
                     <h3 class="text-2xl font-bold mb-4 text-white">頂級醫美診所：全自動化獲客系統</h3>
-                    
+
                     <div class="space-y-4 mb-8 text-gray-300 text-sm leading-relaxed">
-                        <p><strong>【挑戰】</strong> 櫃檯人員流動率高，常漏接夜間諮詢訊息，導致高單價潛在客源流失。</p>
-                        <p><strong>【解決方案】</strong> 部署 <strong>AI Voice Agent (語音預約智能體)</strong>：
-                            <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-400">
-                                <li><strong>意圖識別與過濾：</strong> 自動詢問預算，若低於設定門檻 (如 $500)，引導至 Email 培育；高意向客戶立即轉接醫生。</li>
-                                <li><strong>全自動排程：</strong> 直接讀取 Google Calendar 完成預約，並自動發送術前提醒。</li>
-                            </ul>
+                        <p><strong>【挑戰】</strong> 櫃檯人員流動率高，常漏接夜間諮詢訊息，導致高單價潛在客源流失。人工確認預約耗時且易出錯。</p>
+                        <p><strong>【解決方案 - AI Voice Agent 部署】</strong>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-400">
+                            <li><strong>意圖識別與過濾：</strong> 自動在對話中詢問客戶預算。若低於設定門檻 (如
+                                $500)，自動引導至電子郵件培育清單；若為高意向客戶，立即轉接醫生或安排通話。</li>
+                            <li><strong>全自動排程：</strong> AI 直接讀取 Google Calendar 空檔，完成預約並自動發送術前提醒。</li>
+                        </ul>
                         </p>
-                        <p><strong>【結果】</strong> 夜間諮詢轉換率提升 40%，每年節省 1.5 名正職人力。</p>
+                        <p><strong>【結果 (The ROI)】</strong>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-400">
+                            <li>📈 夜間與假日諮詢轉換率提升 <strong>40%</strong>。</li>
+                            <li>💰 每年節省 <strong>1.5 名</strong> 正職客服人力成本。</li>
+                            <li>🚀 實現真正的 24/7 秒回，客戶零等待。</li>
+                        </ul>
+                        </p>
                     </div>
 
                     <blockquote class="border-l-2 border-liyon-gold pl-4 italic text-gray-400 text-sm mb-0">
@@ -313,38 +399,65 @@
             <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                 Ready to Decouple Your Time from Revenue?
             </h2>
+            <h3 class="text-2xl text-liyon-gold font-bold mb-4">準備好讓收入與工時脫鉤了嗎？</h3>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
                 別再用你的時間換取金錢。現在就建立屬於你的自動化資產。<br>
                 每月僅需 <span class="text-liyon-gold font-bold">$60 美金</span> 的工具成本，即可啟動你的 AI 代理人團隊。
             </p>
-            
-            <div class="bg-white/5 border border-liyon-gold/30 rounded-2xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-md">
+
+            <div
+                class="bg-white/5 border border-liyon-gold/30 rounded-2xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-md">
                 <h3 class="text-liyon-gold font-bold text-lg mb-4 tracking-wide">【LIYON 創始合作夥伴計畫】(BETA)</h3>
                 <ul class="text-left space-y-3 text-gray-300 mb-8 max-w-md mx-auto">
                     <li class="flex items-center"><span class="text-liyon-gold mr-3">★</span> 限額招募 3 位種子客戶</li>
-                    <li class="flex items-center"><span class="text-liyon-gold mr-3">★</span> 深度診斷：創辦人親自拆解商業模式</li>
-                    <li class="flex items-center"><span class="text-liyon-gold mr-3">★</span> <strong>90 天無效全額退款保證</strong></li>
+                    <li class="flex items-center"><span class="text-liyon-gold mr-3">★</span> 深度診斷：創辦人親自拆解您的商業模式</li>
+                    <li class="flex items-center"><span class="text-liyon-gold mr-3">★</span> <strong>90 天無效全額退款保證 (Risk
+                            Reversal)</strong></li>
                 </ul>
-                <a href="mailto:contact@liyon-global.com" class="inline-block w-full md:w-auto px-10 py-4 bg-liyon-gold text-liyon-navy font-bold rounded shadow-[0_0_30px_rgba(197,160,101,0.5)] hover:scale-105 transition-transform duration-300">
+                <a href="mailto:liyon.global@gmail.com"
+                    class="inline-block w-full md:w-auto px-10 py-4 bg-liyon-gold text-liyon-navy font-bold rounded shadow-[0_0_30px_rgba(197,160,101,0.5)] hover:scale-105 transition-transform duration-300">
                     立即預約策略通話
                 </a>
+                <a href="mailto:liyon.global@gmail.com"
+                    class="mt-4 inline-block text-xs text-gray-400 hover:text-liyon-gold transition-colors">(點擊開啟郵件)</a>
             </div>
         </div>
     </section>
 
     <!-- 6. Footer -->
     <footer class="bg-black py-10 border-t border-gray-900 text-center md:text-left">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div class="md:w-1/3">
                 <h4 class="text-white font-bold text-lg">LIYON <span class="text-liyon-gold">Global</span></h4>
-                <p class="text-gray-500 text-xs mt-2">立盈國際興業股份有限公司 | 統編：60355352<br>桃園市桃園區經國路11號15樓之1</p>
+                <p class="text-gray-400 text-sm mt-2">LIYON Global Enterprise Co., Ltd.<br>立盈國際興業股份有限公司</p>
+                <p class="text-gray-500 text-xs mt-1">統編：60355352</p>
             </div>
-            <div class="text-gray-600 text-xs">
-                &copy; 2026 LIYON Global. All Rights Reserved.<br>
-                Designed with Intelligence. Rooted in Truth.
+
+            <div class="md:w-1/3">
+                <h5 class="text-white font-bold mb-3">Contact Us</h5>
+                <ul class="text-gray-400 text-sm space-y-1">
+                    <li><strong>Tel:</strong> 03-3558665 #103</li>
+                    <li><strong>Fax:</strong> 03-3558685</li>
+                    <li><strong>Email:</strong> liyon.global@gmail.com</li>
+                </ul>
             </div>
+
+            <div class="md:w-1/3">
+                <h5 class="text-white font-bold mb-3">Location</h5>
+                <p class="text-gray-400 text-sm">
+                    <strong>Address:</strong><br>
+                    330 桃園市桃園區經國路11號15樓之1<br>
+                    <span class="text-xs text-gray-500 mt-1 block">15F.-1, No. 11, Jingguo Rd., Taoyuan Dist., Taoyuan
+                        City 330, Taiwan (R.O.C.)</span>
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-gray-900 text-center text-gray-600 text-xs flex flex-col md:flex-row justify-between items-center">
+            <span>&copy; 2026 LIYON Global. All Rights Reserved.</span>
+            <span>Designed with Intelligence. Rooted in Truth.</span>
         </div>
     </footer>
 
 </body>
-</html>

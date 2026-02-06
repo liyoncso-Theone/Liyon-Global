@@ -8,8 +8,9 @@ os.makedirs(TARGET_DIR, exist_ok=True)
 OPENAI_PATH = "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0"
 
 def create_svg_from_path(name, path_data, viewbox="0 0 24 24"):
-    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}" fill="currentColor">
-  <path d="{path_data}"/>
+    # Using explicit white fill for dark mode compatibility
+    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}" fill="white">
+  <path d="{path_data}" fill-rule="evenodd"/>
 </svg>"""
     with open(f"{TARGET_DIR}/{name}.svg", "w") as f:
         f.write(svg_content)
@@ -30,7 +31,7 @@ GROK_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="
 XAI_PATH = "M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
 # That was a car icon, wait. Let's make a simple text SVG for "Grok"
 GROK_SVG_TEXT = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40">
-  <text x="50" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="30" text-anchor="middle" fill="currentColor">Grok</text>
+  <text x="50" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="30" text-anchor="middle" fill="white">Grok</text>
 </svg>"""
 
 with open(f"{TARGET_DIR}/grok.svg", "w") as f:

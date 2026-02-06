@@ -2,13 +2,13 @@ import urllib.request
 import os
 
 ICONS = {
-    "n8n": "https://cdn.simpleicons.org/n8n",
-    "openai": "https://cdn.simpleicons.org/openai",
-    "python": "https://cdn.simpleicons.org/python",
-    "docker": "https://cdn.simpleicons.org/docker",
-    "anthropic": "https://cdn.simpleicons.org/anthropic",
-    "google": "https://cdn.simpleicons.org/google",
-    "googlegemini": "https://cdn.simpleicons.org/googlegemini"
+    "n8n": "https://cdn.simpleicons.org/n8n/white",
+    "openai": "https://cdn.simpleicons.org/openai/white",
+    "python": "https://cdn.simpleicons.org/python/white",
+    "docker": "https://cdn.simpleicons.org/docker/white",
+    "anthropic": "https://cdn.simpleicons.org/anthropic/white", # For Claude
+    "google": "https://cdn.simpleicons.org/google/white",
+    "googlegemini": "https://cdn.simpleicons.org/googlegemini/white"
 }
 
 TARGET_DIR = "images/icons"

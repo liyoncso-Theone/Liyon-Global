@@ -530,4 +530,32 @@
         </div>
     </footer>
 
+    <script>
+        // Smooth Scroll for Anchor Links (Premium UX)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Mobile Menu Close (if open)
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    // Smooth Scroll Execution
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update URL Hash without jump
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    </script>
 </body>

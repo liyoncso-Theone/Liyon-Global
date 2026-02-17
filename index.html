@@ -126,13 +126,29 @@
         if (savedLang === 'en') {
             document.documentElement.classList.add('en-mode');
             document.body.classList.add('en-mode'); // Apply to body key
+            updateCalendarLinks('en');
+        }
+
+        function updateCalendarLinks(lang) {
+            const calendarLinks = document.querySelectorAll('a[href*="calendar.app.google"]');
+            calendarLinks.forEach(link => {
+                const url = new URL(link.href);
+                if (lang === 'en') {
+                    url.searchParams.set('hl', 'en');
+                } else {
+                    url.searchParams.delete('hl');
+                }
+                link.href = url.toString();
+            });
         }
 
         function toggleLanguage() {
             const body = document.body;
             const isEn = body.classList.toggle('en-mode');
             document.documentElement.classList.toggle('en-mode');
-            localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh');
+            const newLang = isEn ? 'en' : 'zh';
+            localStorage.setItem('liyon_lang', newLang);
+            updateCalendarLinks(newLang);
         }
     </script>
 </head>

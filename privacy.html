@@ -50,7 +50,35 @@
         li {
             margin-bottom: 0.5rem;
         }
+
+        /* Bilingual Support */
+        .lang-en {
+            display: none;
+        }
+
+        body.en-mode .lang-zh {
+            display: none !important;
+        }
+
+        body.en-mode .lang-en {
+            display: inline-block !important;
+        }
     </style>
+    <script>
+        // Check Language on Load
+        const savedLang = localStorage.getItem('liyon_lang') || 'zh';
+        if (savedLang === 'en') {
+            document.documentElement.classList.add('en-mode');
+            document.body.classList.add('en-mode');
+        }
+
+        function toggleLanguage() {
+            const body = document.body;
+            const isEn = body.classList.toggle('en-mode');
+            document.documentElement.classList.toggle('en-mode');
+            localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh');
+        }
+    </script>
 </head>
 
 <body class="bg-liyon-navy text-gray-300">
@@ -61,66 +89,126 @@
             <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
                 LIYON <span class="text-liyon-gold">Global</span>
             </a>
-            <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Home</a>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()"
+                    class="text-xs border border-white/20 px-2 py-1 rounded hover:bg-white/10 hover:text-liyon-gold transition-all text-gray-300">
+                    <span class="lang-zh">EN</span><span class="lang-en">中</span>
+                </button>
+                <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">
+                    <span class="lang-zh">← 返回首頁</span><span class="lang-en">← Back to Home</span>
+                </a>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-6 pt-32 pb-20">
 
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Privacy Policy & Terms</h1>
-        <p class="text-gray-500 mb-12">Last Updated: February 2026</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <span class="lang-zh">隱私權政策與服務條款</span>
+            <span class="lang-en">Privacy Policy & Terms</span>
+        </h1>
+        <p class="text-gray-500 mb-12">
+            <span class="lang-zh">最後更新：2026 年 2 月</span>
+            <span class="lang-en">Last Updated: February 2026</span>
+        </p>
 
         <!-- Privacy Policy -->
         <section class="mb-16">
-            <h2 class="text-2xl text-liyon-gold mb-6 border-b border-gray-800 pb-2">1. Privacy Policy (隱私權政策)</h2>
+            <h2 class="text-2xl text-liyon-gold mb-6 border-b border-gray-800 pb-2">
+                <span class="lang-zh">1. 隱私權政策 (Privacy Policy)</span>
+                <span class="lang-en">1. Privacy Policy</span>
+            </h2>
 
-            <h3>1.1 Information We Collect</h3>
+            <h3>
+                <span class="lang-zh">1.1 我們收集的資訊</span>
+                <span class="lang-en">1.1 Information We Collect</span>
+            </h3>
             <p>
-                We collect information you provide directly to us, such as when you fill out a contact form, book a
-                consultation, or communicate with us via third-party platforms. This may include your name, email
-                address, phone number, and company details.
+                <span class="lang-zh">我們會收集您直接提供給我們的資訊，例如填寫聯絡表單、預約諮詢，或透過第三方平台溝通時。這可能包括您的姓名、電子郵件地址、電話號碼與公司詳情。</span>
+                <span class="lang-en">We collect information you provide directly to us, such as when you fill out a
+                    contact form, book a consultation, or communicate with us via third-party platforms. This may
+                    include your name, email address, phone number, and company details.</span>
             </p>
 
-            <h3>1.2 How We Use Your Information</h3>
+            <h3>
+                <span class="lang-zh">1.2 我們如何使用您的資訊</span>
+                <span class="lang-en">1.2 How We Use Your Information</span>
+            </h3>
             <p>
-                We use the information we collect to provide, maintain, and improve our services, including:
+                <span class="lang-zh">我們使用收集到的資訊來提供、維護與改進我們的服務，包括：</span>
+                <span class="lang-en">We use the information we collect to provide, maintain, and improve our services,
+                    including:</span>
             </p>
             <ul>
-                <li>Responding to your comments, questions, and requests.</li>
-                <li>Sending you technical notices, updates, security alerts, and support messages.</li>
-                <li>Communicating with you about products, services, offers, and events offered by LIYON Global.</li>
+                <li>
+                    <span class="lang-zh">回應您的評論、問題與請求。</span>
+                    <span class="lang-en">Responding to your comments, questions, and requests.</span>
+                </li>
+                <li>
+                    <span class="lang-zh">向您發送技術通知、更新、安全警報與支援訊息。</span>
+                    <span class="lang-en">Sending you technical notices, updates, security alerts, and support
+                        messages.</span>
+                </li>
+                <li>
+                    <span class="lang-zh">與您溝通有關 LIYON Global 提供的產品、服務、優惠與活動。</span>
+                    <span class="lang-en">Communicating with you about products, services, offers, and events offered by
+                        LIYON Global.</span>
+                </li>
             </ul>
 
-            <h3>1.3 Data Protection</h3>
+            <h3>
+                <span class="lang-zh">1.3 資料與安全保護</span>
+                <span class="lang-en">1.3 Data Protection</span>
+            </h3>
             <p>
-                We implement appropriate technical and organizational measures to protect the security of your personal
-                information. We do not sell, trade, or rent your personal identification information to others.
+                <span class="lang-zh">我們採取適當的技術與組織措施來保護您的個人資訊安全。我們不會出售、交易或租賃您的個人識別資訊給他人。</span>
+                <span class="lang-en">We implement appropriate technical and organizational measures to protect the
+                    security of your personal information. We do not sell, trade, or rent your personal identification
+                    information to others.</span>
             </p>
         </section>
 
         <!-- Terms of Service -->
         <section>
-            <h2 class="text-2xl text-liyon-gold mb-6 border-b border-gray-800 pb-2">2. Terms of Service (服務條款)</h2>
+            <h2 class="text-2xl text-liyon-gold mb-6 border-b border-gray-800 pb-2">
+                <span class="lang-zh">2. 服務條款 (Terms of Service)</span>
+                <span class="lang-en">2. Terms of Service</span>
+            </h2>
 
-            <h3>2.1 Services</h3>
+            <h3>
+                <span class="lang-zh">2.1 服務內容</span>
+                <span class="lang-en">2.1 Services</span>
+            </h3>
             <p>
-                LIYON Global provides AI automation consulting and development services. All services are subject to a
-                separate Service Agreement or Statement of Work (SOW) signed by both parties.
+                <span class="lang-zh">LIYON Global 提供 AI 自動化顧問與開發服務。所有服務皆受制於雙方簽署的獨立「服務協議」或「工作說明書 (SOW)」。</span>
+                <span class="lang-en">LIYON Global provides AI automation consulting and development services. All
+                    services are subject to a separate Service Agreement or Statement of Work (SOW) signed by both
+                    parties.</span>
             </p>
 
-            <h3>2.2 Intellectual Property (IP)</h3>
+            <h3>
+                <span class="lang-zh">2.2 智慧財產權 (IP)</span>
+                <span class="lang-en">2.2 Intellectual Property (IP)</span>
+            </h3>
             <p>
-                As stated in our "How We Work" policy: Upon full payment, <strong>the Client owns 100% of the custom
-                    workflows, automations, and code developed specifically for their project</strong>. LIYON Global
-                retains the right to reuse generic utility functions and knowledge but will not claim ownership over the
-                Client's specific business logic.
+                <span class="lang-zh">如我們的「How We Work」政策所述：一旦全額付款，<strong>客戶擁有專為其專案開發的客製化工作流、自動化與代碼的 100%
+                        產權</strong>。LIYON Global 保留重複使用通用工具函數與知識的權利，但不會對客戶特定的商業邏輯主張所有權。</span>
+                <span class="lang-en">As stated in our "How We Work" policy: Upon full payment, <strong>the Client owns
+                        100% of the custom workflows, automations, and code developed specifically for their
+                        project</strong>. LIYON Global retains the right to reuse generic utility functions and
+                    knowledge but will not claim ownership over the Client's specific business logic.</span>
             </p>
 
-            <h3>2.3 Limitation of Liability</h3>
+            <h3>
+                <span class="lang-zh">2.3 責任限制</span>
+                <span class="lang-en">2.3 Limitation of Liability</span>
+            </h3>
             <p>
-                To the fullest extent permitted by applicable law, LIYON Global shall not be liable for any indirect,
-                incidental, special, consequential, or punitive damages, or any loss of profits or revenues.
+                <span class="lang-zh">在適用法律允許的最大範圍內，LIYON Global 不對任何間接的、附帶的、特殊的、後果性的或懲罰性的損害負責，亦不對任何利潤或收入損失負責。</span>
+                <span class="lang-en">To the fullest extent permitted by applicable law, LIYON Global shall not be
+                    liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of
+                    profits or revenues.</span>
             </p>
         </section>
 

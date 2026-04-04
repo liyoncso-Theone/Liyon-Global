@@ -1,0 +1,19 @@
+# === AI Agent 工作記憶（內部開發狀態，禁止公開）===
+.claude/
+memory-bank/
+
+# === 品牌規範與產品文件（商業機密）===
+*.docx
+智鏈型里昂_品牌識別規範指南_V3.5.md
+PRODUCT_BRIEF*.md
+PRODUCT_PAGE_BRIEF.md
+product_page.md
+SlideFlow_產品規格書.md
+
+# === 開發工具與暫存 ===
+*.py
+node_modules/
+.env*
+.DS_Store
+Thumbs.db
+*.log

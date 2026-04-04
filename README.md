@@ -2,7 +2,7 @@
 
 **立盈國際興業** — 不租時間，造引擎。
 
-四個產品，一個人從零打造。從診所營運到企業資料治理，從台灣企業查詢到 AI 簡報編輯。
+五個產品，一個人從零打造。從診所營運到企業資料治理，從台灣企業查詢到 AI 簡報編輯與離線語音轉錄。
 
 ## Products
 
@@ -10,6 +10,7 @@
 - **CloakFetch** — 台灣企業資料查詢 API，180 萬間公司
 - **PhantomDecomp** — 企業級異質資料整合與治理平台
 - **SlideFlow** — AI 簡報編輯器，完全免費 → [slideflow-ch3.pages.dev](https://slideflow-ch3.pages.dev/)
+- **LIYON Scribe** — 全地端 AI 字幕轉錄工作站，完全離線，3 天免費試用
 
 ## Links
 

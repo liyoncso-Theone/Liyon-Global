@@ -566,7 +566,7 @@
                     <span class="lang-zh">預約 30 分鐘免費諮詢</span>
                     <span class="lang-en">Book a Free 30-Min Call</span>
                 </a>
-                <a href="mailto:liyon.global@gmail.com"
+                <a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ=="
                     class="px-10 py-4 border border-white/30 bg-white/5 text-gray-200 rounded-2xl hover:bg-white/10 hover:text-white transition-all duration-300 text-lg text-center backdrop-blur-sm">
                     <span class="lang-zh">寫信給我</span>
                     <span class="lang-en">Email Me</span>
@@ -640,7 +640,7 @@
                 <ul class="text-gray-400 text-sm space-y-1">
                     <li><strong class="lang-zh">電話：</strong><strong class="lang-en">Tel: </strong>03-3558665 #103</li>
                     <li><strong class="lang-zh">傳真：</strong><strong class="lang-en">Fax: </strong>03-3558685</li>
-                    <li><strong class="lang-zh">信箱：</strong><strong class="lang-en">Email: </strong>liyon.global@gmail.com</li>
+                    <li><strong class="lang-zh">信箱：</strong><strong class="lang-en">Email: </strong>liyon.global[at]gmail.com</li>
                 </ul>
                 <p class="text-gray-400 text-sm mt-3">
                     <span class="lang-zh"><strong>地址：</strong><br>330 桃園市桃園區經國路11號15樓之1</span>
@@ -684,6 +684,21 @@
         });
     </script>
 
+    <!-- Email obfuscation -->
+    <script>
+        document.querySelectorAll('[data-e]').forEach(el => {
+            const parts = atob(el.getAttribute('data-e')).split('|');
+            const addr = parts[0] + '@' + parts[1];
+            const subj = el.getAttribute('data-s') || '';
+            if (el.tagName === 'A') {
+                el.href = 'mailto:' + addr + (subj ? '?subject=' + encodeURIComponent(subj) : '');
+                if (!el.textContent.trim() || el.textContent.includes('[at]')) el.textContent = addr;
+            } else {
+                el.textContent = addr;
+            }
+        });
+    </script>
+
     <!-- JSON-LD -->
     <!-- JSON-LD: Organization -->
     <script type="application/ld+json">
@@ -694,7 +709,7 @@
         "legalName": "LIYON Global Enterprise Co., Ltd.",
         "url": "https://liyoncso-theone.github.io/Liyon-Global/",
         "logo": "https://liyoncso-theone.github.io/Liyon-Global/images/logo_nav_v3.png",
-        "email": "liyon.global@gmail.com",
+        "email": "liyon.global[at]gmail.com",
         "telephone": "+886-3-3558665",
         "address": {
             "@type": "PostalAddress",

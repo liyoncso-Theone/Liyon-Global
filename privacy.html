@@ -117,8 +117,8 @@
             <span class="lang-en">Privacy Policy & Terms</span>
         </h1>
         <p class="text-gray-400 mb-12">
-            <span class="lang-zh">最後更新：2026 年 2 月</span>
-            <span class="lang-en">Last Updated: February 2026</span>
+            <span class="lang-zh">最後更新：2026 年 4 月</span>
+            <span class="lang-en">Last Updated: April 2026</span>
         </p>
 
         <!-- Privacy Policy -->
@@ -174,6 +174,113 @@
                 <span class="lang-en">We implement appropriate technical and organizational measures to protect the
                     security of your personal information. We do not sell, trade, or rent your personal identification
                     information to others.</span>
+            </p>
+        </section>
+
+        <!-- Medical Data — ProBrain -->
+        <section class="mb-16">
+            <h2 class="text-2xl text-liyon-gold mb-6 border-b border-gray-800 pb-2">
+                <span class="lang-zh">1A. 醫療特種個人資料補充條款（ProBrain 適用）</span>
+                <span class="lang-en">1A. Medical Sensitive Personal Data Supplement (ProBrain)</span>
+            </h2>
+
+            <p>
+                <span class="lang-zh">本補充條款適用於使用 ProBrain 產品（AI 診所營運系統）之醫療機構及其病患。ProBrain 處理之資料可能包含個人資料保護法第 6 條所定義之「特種個人資料」（包括醫療、健康檢查相關資料）。</span>
+                <span class="lang-en">This supplement applies to healthcare institutions and their patients using the ProBrain product (AI clinic operations system). Data processed by ProBrain may include "sensitive personal data" as defined in Article 6 of Taiwan's Personal Data Protection Act (PDPA), including medical and health examination records.</span>
+            </p>
+
+            <h3>
+                <span class="lang-zh">1A.1 資料蒐集之法律依據</span>
+                <span class="lang-en">1A.1 Legal Basis for Collection</span>
+            </h3>
+            <p>
+                <span class="lang-zh">依據個人資料保護法第 6 條第 1 項，醫療特種個人資料之蒐集、處理或利用，須符合下列條件之一：</span>
+                <span class="lang-en">Under Article 6(1) of the PDPA, collection, processing, or use of sensitive medical personal data requires at least one of the following conditions:</span>
+            </p>
+            <ul>
+                <li><span class="lang-zh">法律明文規定（如醫療法、傳染病防治法）。</span><span class="lang-en">Explicit legal provision (e.g., Medical Care Act, Communicable Disease Control Act).</span></li>
+                <li><span class="lang-zh">公務機關執行法定職務所必要。</span><span class="lang-en">Necessary for a government agency to perform statutory duties.</span></li>
+                <li><span class="lang-zh">當事人自行公開或其他已合法公開之個人資料。</span><span class="lang-en">Data voluntarily made public by the data subject or otherwise lawfully publicized.</span></li>
+                <li><span class="lang-zh">經當事人書面同意。</span><span class="lang-en">Written consent from the data subject.</span></li>
+                <li><span class="lang-zh">為維護當事人之生命、身體、自由或財產上之利益所必要。</span><span class="lang-en">Necessary to protect the data subject's life, body, freedom, or property interests.</span></li>
+            </ul>
+            <p>
+                <span class="lang-zh"><strong>ProBrain 之資料蒐集以「經當事人書面同意」為主要法律依據。</strong>醫療機構應於啟用 ProBrain 前，取得病患之書面同意（含電子簽名），告知資料蒐集目的、類別、利用期間、地區、對象及方式。</span>
+                <span class="lang-en"><strong>ProBrain primarily relies on "written consent from the data subject" as the legal basis.</strong> Healthcare institutions must obtain written consent (including electronic signatures) from patients before activating ProBrain, informing them of the purpose, categories, duration, regions, recipients, and methods of data use.</span>
+            </p>
+
+            <h3>
+                <span class="lang-zh">1A.2 資料處理架構（BYOC）</span>
+                <span class="lang-en">1A.2 Data Processing Architecture (BYOC)</span>
+            </h3>
+            <p>
+                <span class="lang-zh">ProBrain 採用 BYOC（Bring Your Own Cloud）架構：</span>
+                <span class="lang-en">ProBrain uses a BYOC (Bring Your Own Cloud) architecture:</span>
+            </p>
+            <ul>
+                <li><span class="lang-zh">所有病患資料儲存於<strong>醫療機構自有的 Google Cloud 帳號</strong>中，LIYON Global 不持有、不儲存、不存取任何病患個人資料。</span><span class="lang-en">All patient data is stored in the <strong>healthcare institution's own Google Cloud account</strong>. LIYON Global does not hold, store, or access any patient personal data.</span></li>
+                <li><span class="lang-zh">基礎設施費用由醫療機構直接支付予 Google，帳單寄送至醫療機構。</span><span class="lang-en">Infrastructure costs are billed directly to the healthcare institution by Google.</span></li>
+                <li><span class="lang-zh">LIYON Global 僅提供系統設定、AI 模型部署與技術支援服務，不接觸原始病患資料。</span><span class="lang-en">LIYON Global only provides system configuration, AI model deployment, and technical support — without accessing raw patient data.</span></li>
+            </ul>
+
+            <h3>
+                <span class="lang-zh">1A.3 資料類別與用途</span>
+                <span class="lang-en">1A.3 Data Categories and Purposes</span>
+            </h3>
+            <p>
+                <span class="lang-zh">ProBrain 系統可能處理之特種個人資料類別包括：</span>
+                <span class="lang-en">Categories of sensitive personal data that ProBrain may process include:</span>
+            </p>
+            <ul>
+                <li><span class="lang-zh">術後追蹤紀錄（療程類型、術後狀態回報、異常通報）</span><span class="lang-en">Post-operative tracking records (procedure type, post-op status, anomaly reports)</span></li>
+                <li><span class="lang-zh">病患聯絡資訊（LINE ID、電話，用於 AI 自動關懷訊息發送）</span><span class="lang-en">Patient contact information (LINE ID, phone, for AI automated care messages)</span></li>
+                <li><span class="lang-zh">耗材使用紀錄（與特定病患療程關聯之耗材批號與到期日）</span><span class="lang-en">Consumable usage records (batch numbers and expiry dates linked to specific patient procedures)</span></li>
+                <li><span class="lang-zh">客戶回訪與行銷標籤（RFM 分群，不含診斷資料）</span><span class="lang-en">Customer revisit and marketing tags (RFM segmentation, excluding diagnostic data)</span></li>
+            </ul>
+            <p>
+                <span class="lang-zh">上述資料之蒐集目的限於：術後照護品質提升、異常即時攔截、耗材安全管控、合規行銷。不得用於研究、廣告投放或第三方共享。</span>
+                <span class="lang-en">The above data is collected solely for: post-operative care quality improvement, real-time anomaly interception, consumable safety control, and compliance marketing. It shall not be used for research, advertising targeting, or third-party sharing.</span>
+            </p>
+
+            <h3>
+                <span class="lang-zh">1A.4 資料安全措施</span>
+                <span class="lang-en">1A.4 Data Security Measures</span>
+            </h3>
+            <ul>
+                <li><span class="lang-zh">傳輸加密：所有資料傳輸採 HTTPS/TLS 加密。</span><span class="lang-en">Encryption in transit: All data transfers use HTTPS/TLS encryption.</span></li>
+                <li><span class="lang-zh">防竄改驗證：每則 AI 發送之訊息附帶 SHA-256 雜湊值，可驗證訊息完整性。</span><span class="lang-en">Tamper-proof verification: Each AI-sent message includes a SHA-256 hash for integrity verification.</span></li>
+                <li><span class="lang-zh">HITL（Human-in-the-Loop）：高風險操作（如行銷訊息發送）需經人員確認。</span><span class="lang-en">HITL (Human-in-the-Loop): High-risk operations (e.g., marketing message sending) require human confirmation.</span></li>
+                <li><span class="lang-zh">九層 AI 降級策略：當 AI 信心不足時，自動降級為人工處理。</span><span class="lang-en">9-layer AI degradation strategy: When AI confidence is low, automatically escalates to human handling.</span></li>
+                <li><span class="lang-zh">存取控制：基於角色的存取權限（院長、護理師、行銷人員各有不同權限）。</span><span class="lang-en">Access control: Role-based permissions (director, nurse, and marketing staff have different access levels).</span></li>
+            </ul>
+
+            <h3>
+                <span class="lang-zh">1A.5 當事人權利</span>
+                <span class="lang-en">1A.5 Data Subject Rights</span>
+            </h3>
+            <p>
+                <span class="lang-zh">依據個人資料保護法第 3 條，當事人就其個人資料享有以下權利：</span>
+                <span class="lang-en">Under Article 3 of the PDPA, data subjects have the following rights regarding their personal data:</span>
+            </p>
+            <ul>
+                <li><span class="lang-zh">查詢或請求閱覽。</span><span class="lang-en">Right to inquire or request access.</span></li>
+                <li><span class="lang-zh">請求製給複製本。</span><span class="lang-en">Right to request copies.</span></li>
+                <li><span class="lang-zh">請求補充或更正。</span><span class="lang-en">Right to request supplementation or correction.</span></li>
+                <li><span class="lang-zh">請求停止蒐集、處理或利用。</span><span class="lang-en">Right to request cessation of collection, processing, or use.</span></li>
+                <li><span class="lang-zh">請求刪除。</span><span class="lang-en">Right to request deletion.</span></li>
+            </ul>
+            <p>
+                <span class="lang-zh">病患行使上述權利時，應向其就診之醫療機構提出申請（因資料儲存於醫療機構自有雲端帳號）。醫療機構應於收到請求後 30 日內回應。如涉及 ProBrain 系統技術操作，醫療機構可聯繫 LIYON Global 協助處理。</span>
+                <span class="lang-en">Patients should submit requests to their healthcare institution (as data is stored in the institution's own cloud account). The institution must respond within 30 days. For ProBrain system technical operations, the institution may contact LIYON Global for assistance.</span>
+            </p>
+
+            <h3>
+                <span class="lang-zh">1A.6 資料保留與刪除</span>
+                <span class="lang-en">1A.6 Data Retention and Deletion</span>
+            </h3>
+            <p>
+                <span class="lang-zh">醫療機構應依據醫療法第 70 條（病歷保存至少 7 年）及個人資料保護法規定，自行制定資料保留期限。ProBrain 系統支援資料到期自動標記與匯出功能，協助醫療機構合規執行資料生命週期管理。服務終止時，所有資料保留於醫療機構自有雲端帳號中，LIYON Global 不保留任何副本。</span>
+                <span class="lang-en">Healthcare institutions should establish data retention periods in accordance with Article 70 of the Medical Care Act (medical records must be preserved for at least 7 years) and the PDPA. ProBrain supports automatic data expiry tagging and export to assist institutions with compliant data lifecycle management. Upon service termination, all data remains in the institution's own cloud account — LIYON Global retains no copies.</span>
             </p>
         </section>
 

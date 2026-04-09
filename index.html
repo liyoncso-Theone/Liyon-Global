@@ -615,7 +615,7 @@
                     <li><a href="https://liyon-products.pages.dev/phantomdecomp/" target="_blank" rel="noopener noreferrer" class="hover:text-liyon-gold transition-colors">PhantomDecomp ↗</a></li>
                     <li><a href="https://slideflow-ch3.pages.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-liyon-gold transition-colors">SlideFlow ↗</a></li>
                     <li><a href="https://liyon-products.pages.dev/scribe/" target="_blank" rel="noopener noreferrer" class="hover:text-liyon-gold transition-colors">LIYON Scribe ↗</a></li>
-                    <li class="pt-2 mt-2 border-t border-gray-800">
+                    <li class="pt-2 mt-2 border-t border-white/10">
                         <a href="vibe-state-cli.html" class="hover:text-liyon-gold transition-colors flex items-center gap-2 justify-center md:justify-start">
                             vibe-state-cli
                             <span class="text-[10px] border border-liyon-gold/30 text-liyon-gold px-1 rounded">OSS</span>
@@ -648,7 +648,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gray-900 text-center text-gray-400/80 text-xs">
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-white/10 text-center text-gray-400/80 text-xs">
             <span>&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</span>
         </div>
     </footer>
@@ -657,8 +657,9 @@
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
+                if (!targetId || !targetId.startsWith('#')) return;
+                e.preventDefault();
                 if (targetId === '#') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
@@ -750,6 +751,21 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
         "provider": { "@type": "Organization", "name": "LIYON Global Enterprise" }
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "LIYON Global",
+                "item": "https://liyoncso-theone.github.io/Liyon-Global/"
+            }
+        ]
     }
     </script>
 </body>

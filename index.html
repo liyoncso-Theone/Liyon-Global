@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>立盈國際 LIYON Global | AI Products & Data Infrastructure</title>
-    <meta name="description" content="五個 AI 產品：ProBrain 診所營運系統、CloakFetch 台灣企業資料 API、PhantomDecomp 資料整合平台、SlideFlow 免費簡報編輯器、LIYON Scribe 離線 AI 字幕轉錄。立盈國際興業。">
+    <meta name="description" content="AI 產品與開源工具：ProBrain 診所 AI 營運、CloakFetch 企業資料 API、PhantomDecomp 資料整合 ETL、SlideFlow 免費簡報編輯、LIYON Scribe 離線字幕轉錄、vibe-state-cli 開源 AI 記憶管理。立盈國際興業。">
     <link rel="canonical" href="https://liyoncso-theone.github.io/Liyon-Global/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/">
     <meta property="og:title" content="立盈國際 LIYON Global | AI Products & Data Infrastructure">
-    <meta property="og:description" content="Five AI products: ProBrain clinic ops, CloakFetch business data API, PhantomDecomp data integration, SlideFlow presentation editor, LIYON Scribe offline transcription.">
+    <meta property="og:description" content="AI products & open source tools: ProBrain clinic ops, CloakFetch business data API, PhantomDecomp ETL, SlideFlow presentation editor, LIYON Scribe transcription, vibe-state-cli AI memory management.">
     <meta property="og:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="立盈國際 LIYON Global | AI Products & Data Infrastructure">
-    <meta name="twitter:description" content="Five AI products: ProBrain, CloakFetch, PhantomDecomp, SlideFlow, LIYON Scribe. By LIYON Global Enterprise.">
+    <meta name="twitter:description" content="AI products & open source: ProBrain, CloakFetch, PhantomDecomp, SlideFlow, LIYON Scribe, vibe-state-cli. By LIYON Global Enterprise.">
     <meta name="twitter:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -261,15 +261,20 @@
         <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-liyon-gold/30 to-transparent"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <span class="text-liyon-gold text-sm font-bold tracking-widest uppercase">Product Matrix</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-3 text-white">
-                    <span class="lang-zh">五個產品，各自解決一個真問題。</span>
-                    <span class="lang-en">Five products. Each solves one real problem.</span>
+                    <span class="lang-zh">每個產品，解決一個真問題。</span>
+                    <span class="lang-en">Each product solves one real problem.</span>
                 </h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Enterprise Solutions -->
+            <p class="text-xs text-liyon-gold/60 tracking-[0.3em] uppercase font-bold mb-6">
+                <span class="lang-zh">企業解決方案 Enterprise Solutions</span>
+                <span class="lang-en">Enterprise Solutions</span>
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
                 <!-- Card 1: ProBrain -->
                 <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col">
@@ -278,7 +283,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">ProBrain</h3>
+                    <h3 class="text-xl font-bold mb-2 text-white"><span class="lang-zh">ProBrain 企業大腦</span><span class="lang-en">ProBrain</span></h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">
                         <span class="lang-zh">醫美 / 牙醫 · 月費制</span>
                         <span class="lang-en">Aesthetics / Dental · Monthly</span>
@@ -301,7 +306,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">CloakFetch</h3>
+                    <h3 class="text-xl font-bold mb-2 text-white"><span class="lang-zh">CloakFetch 企業透視</span><span class="lang-en">CloakFetch</span></h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">
                         <span class="lang-zh">180 萬間公司 · 按量計費</span>
                         <span class="lang-en">1.8M Companies · Pay-as-you-go</span>
@@ -324,7 +329,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">PhantomDecomp</h3>
+                    <h3 class="text-xl font-bold mb-2 text-white"><span class="lang-zh">PhantomDecomp 數據煉金</span><span class="lang-en">PhantomDecomp</span></h3>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">
                         <span class="lang-zh">金融 / 地產 / 政府 · 專案制</span>
                         <span class="lang-en">Finance / Real Estate / Gov · Project-based</span>
@@ -340,6 +345,15 @@
                     </a>
                 </div>
 
+            </div>
+
+            <!-- Free & Open Source -->
+            <p class="text-xs text-emerald-400/60 tracking-[0.3em] uppercase font-bold mb-6 mt-4">
+                <span class="lang-zh">免費工具 & 開源 Free & Open Source</span>
+                <span class="lang-en">Free & Open Source</span>
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 <!-- Card 4: SlideFlow -->
                 <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col border border-liyon-gold/30">
                     <div class="w-14 h-14 rounded-2xl bg-liyon-gold/10 flex items-center justify-center mb-6 group-hover:bg-liyon-gold/20 transition-colors">
@@ -348,7 +362,7 @@
                         </svg>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-white">SlideFlow</h3>
+                        <h3 class="text-xl font-bold text-white"><span class="lang-zh">SlideFlow 簡報解鎖</span><span class="lang-en">SlideFlow</span></h3>
                         <span class="text-xs bg-liyon-gold/20 text-liyon-gold px-2 py-0.5 rounded-full font-bold">FREE</span>
                     </div>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">
@@ -374,7 +388,7 @@
                         </svg>
                     </div>
                     <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-white">LIYON Scribe</h3>
+                        <h3 class="text-xl font-bold text-white"><span class="lang-zh">LIYON Scribe 智錄</span><span class="lang-en">LIYON Scribe</span></h3>
                         <span class="text-xs bg-liyon-gold/20 text-liyon-gold px-2 py-0.5 rounded-full font-bold">FREE</span>
                     </div>
                     <p class="text-sm text-liyon-gold mb-4 font-mono">
@@ -389,6 +403,32 @@
                         class="mt-auto inline-block px-6 py-2 bg-liyon-gold text-liyon-navy text-sm font-bold rounded-lg hover:scale-105 transition-transform duration-300 text-center">
                         <span class="lang-zh">免費下載</span>
                         <span class="lang-en">Free Download</span>
+                    </a>
+                </div>
+
+                <!-- Card 6: vibe-state-cli -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col border border-emerald-500/30">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                        <svg class="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-xl font-bold text-white">vibe-state-cli</h3>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">OSS</span>
+                    </div>
+                    <p class="text-sm text-emerald-400 mb-4 font-mono">
+                        <span class="lang-zh">開源 · MIT 授權 · 開發者工具</span>
+                        <span class="lang-en">Open Source · MIT · Developer Tool</span>
+                    </p>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">
+                        <span class="lang-zh">你的 AI 每次關掉對話就什麼都忘了。這個工具讓所有 AI 編碼工具共用一個大腦——Claude Code、Cursor、Windsurf、Gemini，切換時不失憶。</span>
+                        <span class="lang-en">Your AI forgets everything when you close the chat. This tool gives all your AI coding tools one shared brain — Claude Code, Cursor, Windsurf, Gemini. Switch without losing context.</span>
+                    </p>
+                    <a href="vibe-state-cli.html"
+                        class="mt-auto inline-block px-6 py-2 bg-emerald-500 text-white text-sm font-bold rounded-lg hover:scale-105 transition-transform duration-300 text-center">
+                        <span class="lang-zh">查看專案</span>
+                        <span class="lang-en">View Project</span>
                     </a>
                 </div>
 
@@ -435,8 +475,8 @@
                 </h2>
                 <div class="space-y-6 text-gray-400 leading-relaxed">
                     <p>
-                        <span class="lang-zh">我叫 Theone Lin（里昂），在不動產行業做了 8 年。我太清楚「人卡在重複工作裡出不來」是什麼感覺——所以我開始學 AI，自己動手造工具。兩個月內做出五個產品，從診所營運系統到資料治理平台，每一個都是解決我親眼看到的真問題。</span>
-                        <span class="lang-en">I'm Theone Lin. I spent 8 years in real estate. I know exactly what it feels like to be stuck in repetitive work — so I started learning AI and building tools myself. Five products in two months, from clinic operations to data governance, each solving a real problem I've seen firsthand.</span>
+                        <span class="lang-zh">我叫 Theone Lin（里昂），在不動產行業做了 8 年。我太清楚「人卡在重複工作裡出不來」是什麼感覺——所以我開始學 AI，自己動手造工具。兩個月內從零做出上面所有的產品，從診所營運系統到資料治理平台，從開發者工具到 AI 字幕轉錄，每一個都是解決我親眼看到的真問題。</span>
+                        <span class="lang-en">I'm Theone Lin. I spent 8 years in real estate. I know exactly what it feels like to be stuck in repetitive work — so I started learning AI and building tools myself. Every product above was built from scratch in two months — from clinic operations to data governance, from developer tools to AI transcription, each solving a real problem I've seen firsthand.</span>
                     </p>
 
                     <!-- 3 Milestone Cards -->
@@ -472,29 +512,6 @@
                         <span class="lang-en">My principles are simple: <strong class="text-white">decisions grounded in data, not gut feelings</strong>; <strong class="text-white">systems that give people their time back</strong>. You don't need to understand technology — just tell me what your team wastes the most time on every day.</span>
                     </p>
 
-                    <!-- Open Source Banner -->
-                    <div class="mt-8 mb-6 bg-white/5 border border-emerald-500/20 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                        <div class="flex items-center gap-3">
-                            <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                            </svg>
-                            <div>
-                                <span class="font-mono text-sm text-emerald-400 font-semibold">vibe-state-cli</span>
-                                <span class="text-[10px] text-gray-500 ml-2 border border-gray-600 px-1.5 py-0.5 rounded">Open Source</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm">
-                            <p class="text-gray-400 hidden sm:block">
-                                <span class="lang-zh">解決 AI 編碼工具的失憶問題</span>
-                                <span class="lang-en">Fixes AI coding tools' memory loss</span>
-                            </p>
-                            <a href="vibe-state-cli.html"
-                                class="flex-shrink-0 px-4 py-2 border border-emerald-500/40 text-emerald-400 text-xs font-semibold rounded-lg hover:bg-emerald-500/10 transition-all">
-                                <span class="lang-zh">查看專案 →</span>
-                                <span class="lang-en">View Project →</span>
-                            </a>
-                        </div>
-                    </div>
 
                     <a href="https://www.linkedin.com/in/theone-lin/" target="_blank" rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 text-sm text-liyon-gold hover:text-white transition-colors mt-4">
@@ -518,7 +535,7 @@
                 <span class="lang-en">You have the problem. I'll build the solution.</span>
             </h2>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                <span class="lang-zh">上面五個產品，是我解決問題的方式。但每間公司的痛點不一樣——你不需要先搞懂這些產品是什麼，只需要告訴我你現在被什麼卡住。30 分鐘，聊清楚問題，我來想辦法。</span>
+                <span class="lang-zh">上面這些產品和工具，是我解決問題的方式。但每間公司的痛點不一樣——你不需要先搞懂它們是什麼，只需要告訴我你現在被什麼卡住。30 分鐘，聊清楚問題，我來想辦法。</span>
                 <span class="lang-en">The five products above are how I solve problems. But every company's pain is different — you don't need to understand these products first. Just tell me what's blocking you. 30 minutes. You talk, I listen, then I figure it out.</span>
             </p>
 
@@ -647,6 +664,7 @@
     </script>
 
     <!-- JSON-LD -->
+    <!-- JSON-LD: Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -668,7 +686,38 @@
         "sameAs": [
             "https://www.linkedin.com/in/theone-lin/",
             "https://www.youtube.com/@TheoneAIchain"
-        ]
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Theone Lin",
+            "jobTitle": "Founder",
+            "url": "https://www.linkedin.com/in/theone-lin/"
+        }
+    }
+    </script>
+    <!-- JSON-LD: WebSite (for GEO/AEO discoverability) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LIYON Global",
+        "url": "https://liyoncso-theone.github.io/Liyon-Global/",
+        "description": "AI products and open source tools for business automation, data infrastructure, and developer productivity."
+    }
+    </script>
+    <!-- JSON-LD: SoftwareApplication (vibe-state-cli for GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "vibe-state-cli",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Persistent AI memory across coding tools. One shared brain for Claude Code, Cursor, Windsurf, and 5 more AI/IDE tools.",
+        "url": "https://github.com/liyoncso-Theone/vibe-state-cli",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "provider": { "@type": "Organization", "name": "LIYON Global Enterprise" }
     }
     </script>
 </body>

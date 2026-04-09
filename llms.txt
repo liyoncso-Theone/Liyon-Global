@@ -1,0 +1,44 @@
+# LIYON Global Enterprise
+
+> AI products and open source tools by LIYON Global Enterprise Co., Ltd.
+
+## Company
+
+- Name: LIYON Global Enterprise Co., Ltd. (立盈國際興業股份有限公司)
+- Founded by: Theone Lin
+- Focus: AI-powered business automation and developer tools
+- Website: https://liyoncso-theone.github.io/Liyon-Global/
+
+## Products
+
+### ProBrain (企業大腦)
+AI clinic operations director for aesthetics and dental practices. Post-op care automation, anomaly detection, inventory FEFO control, compliance marketing — all inside LINE.
+- URL: https://liyon-products.pages.dev/probrain/
+
+### CloakFetch (企業透視)
+Taiwan business data API. 1.8M companies, sub-5ms response. REST API for CRM, risk systems, and AI agents.
+
+### PhantomDecomp (數據煉金)
+Enterprise heterogeneous data integration and governance. Validated on 489M records, 4 sources, 25.75 GB on a single 32GB machine.
+- URL: https://liyon-products.pages.dev/phantomdecomp/
+
+### SlideFlow (簡報解鎖)
+AI presentation editor. Upload locked PDF/PPTX, AI recognizes all text, edit freely, export to editable PowerPoint. 100% free, 100% browser-based.
+- URL: https://slideflow-ch3.pages.dev/
+
+### LIYON Scribe (智錄)
+On-device AI transcription workstation. Offline-first speech-to-text with 5 professional context modes (church, tech, medical, legal, general). 280+ biblical terminology hotwords. Free forever.
+- URL: https://liyon-products.pages.dev/scribe/
+
+### vibe-state-cli (Open Source)
+Persistent AI memory across coding tools. One shared brain for Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI. MIT license.
+- GitHub: https://github.com/liyoncso-Theone/vibe-state-cli
+- PyPI: https://pypi.org/project/vibe-state-cli/
+- URL: https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html
+
+## Contact
+
+- Email: liyon.global@gmail.com
+- Phone: +886-3-3558665 #103
+- LinkedIn: https://www.linkedin.com/in/theone-lin/
+- YouTube: https://www.youtube.com/@TheoneAIchain

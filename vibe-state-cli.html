@@ -85,7 +85,7 @@
                 <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
                    class="flex items-center gap-2 border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 rounded-lg px-4 py-2 text-sm font-medium transition-colors">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    <span>Star on GitHub</span>
+                    <span class="lang-zh">在 GitHub 上查看</span><span class="lang-en">View on GitHub</span>
                 </a>
             </div>
 
@@ -106,7 +106,7 @@
             <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
                class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-400 rounded-lg px-4 py-2 text-sm font-medium">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Star on GitHub
+                <span class="lang-zh">在 GitHub 上查看</span><span class="lang-en">View on GitHub</span>
             </a>
         </div>
     </nav>
@@ -516,6 +516,20 @@
                         <span class="lang-en">2 red-team reviews + 2 senior engineers. Cut 6 over-engineered features (fingerprint, snapshot, exponential backoff locks). Found and fixed 11 security issues. Lesson: complexity itself is risk.</span>
                     </p>
                 </div>
+
+                <!-- Story 5 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <span class="text-xs text-emerald-400 font-mono">v0.3.3 — Real World</span>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <span class="lang-zh">「command not found」才是大多數人會遇到的</span>
+                        <span class="lang-en">"command not found" is the happy path</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">在真實專案測試 <code class="text-emerald-400">vibe init</code>，IDE 終端找不到 <code class="text-emerald-400">vibe</code> 指令——因為 <code class="text-emerald-400">pipx ensurepath</code> 只對新開的終端視窗生效。不是 bug，但對新手來說「command not found」就是「壞了」。修正：重寫 README，假設讀者從未用過 pipx。</span>
+                        <span class="lang-en">Tested <code class="text-emerald-400">vibe init</code> in a real project. The IDE terminal couldn't find the <code class="text-emerald-400">vibe</code> command — because <code class="text-emerald-400">pipx ensurepath</code> only updates PATH for new terminal windows. Not a bug, but for first-time users, "command not found" means "it's broken." Fix: redesigned the README to assume the reader has never used pipx.</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -542,7 +556,7 @@
                     <p class="text-gray-400 text-sm mt-1">Lines of Code</p>
                 </div>
             </div>
-            <p class="text-center text-gray-500 text-sm">2 red-team reviews &middot; 2 senior engineers (30 years experience) &middot; v0.1 to v0.3 in 3 days</p>
+            <p class="text-center text-gray-500 text-sm">2 red-team reviews &middot; 2 senior engineers (30 years experience) &middot; v0.1 to v0.3.3 in 4 days</p>
         </div>
     </section>
 
@@ -686,22 +700,35 @@
 
 
     <!-- ==================== Section 9: Footer ==================== -->
-    <footer class="border-t border-emerald-500/10 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+    <footer class="border-t border-emerald-500/10 py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
             <div>
-                <span class="text-white font-semibold">LIYON Global</span>
-                <span class="text-gray-600 mx-1">&times;</span>
-                <span class="text-emerald-400 font-mono">vibe-state-cli</span>
-                <span class="text-gray-600 mx-2">&middot;</span>
-                An open source project by LIYON Global Enterprise
+                <h4 class="font-bold text-lg text-white">LIYON <span class="text-liyon-gold">Global</span></h4>
+                <p class="text-gray-400 text-sm mt-2">LIYON Global Enterprise Co., Ltd.<br><span class="lang-zh">立盈國際興業股份有限公司</span></p>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">GitHub</a>
-                <a href="https://pypi.org/project/vibe-state-cli/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">PyPI</a>
-                <span>MIT License</span>
+            <div>
+                <h5 class="font-bold text-white mb-3"><span class="lang-zh">產品列表</span><span class="lang-en">Products</span></h5>
+                <ul class="text-gray-400 text-sm space-y-1">
+                    <li><a href="https://liyoncso-theone.github.io/Liyon-Global/" class="hover:text-emerald-400 transition-colors"><span class="lang-zh">&larr; LIYON 官網</span><span class="lang-en">&larr; LIYON Homepage</span></a></li>
+                    <li><a href="../products/probrain/" class="hover:text-emerald-400 transition-colors">ProBrain</a></li>
+                    <li><a href="../products/phantomdecomp/" class="hover:text-emerald-400 transition-colors">PhantomDecomp</a></li>
+                    <li><a href="../products/scribe/" class="hover:text-emerald-400 transition-colors">LIYON Scribe</a></li>
+                    <li><a href="https://slideflow-ch3.pages.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">SlideFlow &nearr;</a></li>
+                    <li><span class="text-emerald-400 font-medium">vibe-state-cli</span></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-white mb-3"><span class="lang-zh">連結</span><span class="lang-en">Links</span></h5>
+                <ul class="text-gray-400 text-sm space-y-1">
+                    <li><a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/vibe-state-cli/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">PyPI</a></li>
+                    <li><span>MIT License</span></li>
+                </ul>
             </div>
         </div>
-        <p class="text-center text-gray-600 text-xs mt-6">&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</p>
+        <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-emerald-500/10 text-center text-gray-600 text-xs">
+            <span>&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</span>
+        </div>
     </footer>
 
 </body>

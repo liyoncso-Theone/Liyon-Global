@@ -264,13 +264,27 @@
     <section id="features" class="py-20 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                <span class="lang-zh">5 個指令，就這樣。</span>
-                <span class="lang-en">5 commands. That's it.</span>
+                <span class="lang-zh">初始化後，跟 AI 說就好。</span>
+                <span class="lang-en">After init, just talk to your AI.</span>
             </h2>
-            <p class="text-gray-400 text-center mb-12">
-                <span class="lang-zh">沒有學習曲線。</span>
-                <span class="lang-en">Zero learning curve.</span>
+            <p class="text-gray-400 text-center mb-6 max-w-2xl mx-auto">
+                <span class="lang-zh">只有 <code class="text-emerald-400">vibe init</code> 需要在終端打字。之後所有操作都透過 AI 對話完成——跟 AI 說「vibe start」，它就會幫你執行。</span>
+                <span class="lang-en">Only <code class="text-emerald-400">vibe init</code> requires the terminal. After that, just tell your AI "vibe start" or "vibe sync" — it knows these are terminal commands and runs them for you.</span>
             </p>
+            <div class="text-center mb-12">
+                <div class="inline-block terminal-block rounded-lg px-5 py-3 text-sm">
+                    <span class="text-gray-500">
+                        <span class="lang-zh">你跟 AI 說：</span>
+                        <span class="lang-en">You tell AI:</span>
+                    </span>
+                    <span class="text-emerald-400 font-mono ml-2">"vibe start"</span>
+                    <span class="text-gray-600 mx-2">→</span>
+                    <span class="text-gray-400">
+                        <span class="lang-zh">AI 自動執行，載入你的進度</span>
+                        <span class="lang-en">AI runs it, loads your progress</span>
+                    </span>
+                </div>
+            </div>
 
             <!-- Commands grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -372,6 +386,61 @@
         </div>
     </section>
 
+    <!-- ==================== Section 4.5: What It Does NOT Do ==================== -->
+    <section class="py-16 px-6 bg-liyon-dark">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">
+                <span class="lang-zh">不做什麼</span>
+                <span class="lang-en">What it does NOT do</span>
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <p class="text-gray-300 text-sm">
+                        <strong class="text-white">
+                            <span class="lang-zh">不呼叫任何 API。</span>
+                            <span class="lang-en">No API calls.</span>
+                        </strong>
+                        <span class="lang-zh">完全離線，沒有遙測，沒有網路。</span>
+                        <span class="lang-en">Fully offline. No telemetry. No network.</span>
+                    </p>
+                </div>
+                <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <p class="text-gray-300 text-sm">
+                        <strong class="text-white">
+                            <span class="lang-zh">不碰你的 git。</span>
+                            <span class="lang-en">Never touches your git.</span>
+                        </strong>
+                        <span class="lang-zh">只讀取，不會 commit 或 push。</span>
+                        <span class="lang-en">Read-only. No commits. No pushes.</span>
+                    </p>
+                </div>
+                <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <p class="text-gray-300 text-sm">
+                        <strong class="text-white">
+                            <span class="lang-zh">不綁架你。</span>
+                            <span class="lang-en">No lock-in.</span>
+                        </strong>
+                        <span class="lang-zh">.vibe/ 是純 Markdown，隨時刪掉就好。</span>
+                        <span class="lang-en">.vibe/ is plain Markdown. Delete it anytime.</span>
+                    </p>
+                </div>
+                <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <p class="text-gray-300 text-sm">
+                        <strong class="text-white">
+                            <span class="lang-zh">不改變你的工作方式。</span>
+                            <span class="lang-en">No workflow change.</span>
+                        </strong>
+                        <span class="lang-zh">你還是用原本的方式跟 AI 對話。vibe 只是確保 AI 記得。</span>
+                        <span class="lang-en">Keep talking to your AI as usual. vibe just makes sure it remembers.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ==================== Section 5: Story ==================== -->
     <section id="story" class="py-20 px-6 bg-liyon-dark/50">
@@ -482,74 +551,110 @@
     <section id="install" class="py-20 px-6">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                <span class="lang-zh">30 秒開始。</span>
-                <span class="lang-en">Get started in 30 seconds.</span>
+                <span class="lang-zh">2 分鐘安裝，之後不用再碰終端。</span>
+                <span class="lang-en">2 minutes to install. Then never touch the terminal again.</span>
             </h2>
-            <p class="text-gray-400 text-center mb-12">
-                <span class="lang-zh">選一種你喜歡的安裝方式。</span>
-                <span class="lang-en">Pick your preferred install method.</span>
-            </p>
 
-            <!-- Install methods -->
-            <div class="grid md:grid-cols-3 gap-6 mb-16">
-                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="terminal-dot bg-red-500"></span>
-                        <span class="terminal-dot bg-yellow-500"></span>
-                        <span class="terminal-dot bg-green-500"></span>
+            <!-- Step 1: Install -->
+            <div class="max-w-2xl mx-auto mt-12 space-y-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">1</span>
+                        <h3 class="text-lg font-semibold text-white">
+                            <span class="lang-zh">安裝（全電腦一次，之後不用管）</span>
+                            <span class="lang-en">Install (once per machine, then forget about it)</span>
+                        </h3>
                     </div>
-                    <p class="text-gray-500 text-xs mb-2"># Recommended</p>
-                    <code class="text-emerald-400 text-sm select-all">$ pipx install vibe-state-cli</code>
-                </div>
-                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="terminal-dot bg-red-500"></span>
-                        <span class="terminal-dot bg-yellow-500"></span>
-                        <span class="terminal-dot bg-green-500"></span>
+                    <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto space-y-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="terminal-dot bg-red-500"></span>
+                            <span class="terminal-dot bg-yellow-500"></span>
+                            <span class="terminal-dot bg-green-500"></span>
+                        </div>
+                        <code class="text-emerald-400 text-sm block select-all">$ pip install pipx</code>
+                        <code class="text-emerald-400 text-sm block select-all">$ pipx ensurepath</code>
+                        <code class="text-emerald-400 text-sm block select-all">$ pipx install vibe-state-cli</code>
                     </div>
-                    <p class="text-gray-500 text-xs mb-2"># Alternative</p>
-                    <code class="text-emerald-400 text-sm select-all">$ pip install vibe-state-cli</code>
-                </div>
-                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="terminal-dot bg-red-500"></span>
-                        <span class="terminal-dot bg-yellow-500"></span>
-                        <span class="terminal-dot bg-green-500"></span>
-                    </div>
-                    <p class="text-gray-500 text-xs mb-2"># For uv users</p>
-                    <code class="text-emerald-400 text-sm select-all">$ uv tool install vibe-state-cli</code>
-                </div>
-            </div>
-
-            <!-- Quick Start -->
-            <h3 class="text-xl font-semibold text-center mb-8">
-                <span class="lang-zh">Quick Start</span>
-                <span class="lang-en">Quick Start</span>
-            </h3>
-            <div class="max-w-lg mx-auto space-y-4">
-                <div class="flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">1</span>
-                    <code class="terminal-block rounded-lg px-4 py-2 text-sm text-emerald-400 select-all flex-1 overflow-x-auto">pipx install vibe-state-cli</code>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">2</span>
-                    <code class="terminal-block rounded-lg px-4 py-2 text-sm text-emerald-400 select-all flex-1 overflow-x-auto">cd your-project && vibe init</code>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">3</span>
-                    <p class="terminal-block rounded-lg px-4 py-2 text-sm text-gray-300 flex-1">
-                        <span class="lang-zh">告訴你的 AI：</span>
-                        <span class="lang-en">Tell your AI:</span>
-                        <code class="text-emerald-400">"vibe start"</code>
+                    <p class="text-yellow-400/80 text-xs mt-3">
+                        <span class="lang-zh">⚠️ 跑完後，<strong>關掉終端和 IDE，重新開</strong>。新的 PATH 只在重啟後生效。</span>
+                        <span class="lang-en">⚠️ After running, <strong>close and reopen your terminal and IDE</strong>. New PATH only takes effect after restart.</span>
                     </p>
                 </div>
-                <div class="flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">4</span>
-                    <p class="terminal-block rounded-lg px-4 py-2 text-sm text-gray-300 flex-1">
-                        <span class="lang-zh">收工時：</span>
-                        <span class="lang-en">End of day:</span>
-                        <code class="text-emerald-400">"vibe sync"</code>
+
+                <!-- Step 2: Init -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">2</span>
+                        <h3 class="text-lg font-semibold text-white">
+                            <span class="lang-zh">初始化專案（每個專案一次）</span>
+                            <span class="lang-en">Initialize project (once per project)</span>
+                        </h3>
+                    </div>
+                    <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="terminal-dot bg-red-500"></span>
+                            <span class="terminal-dot bg-yellow-500"></span>
+                            <span class="terminal-dot bg-green-500"></span>
+                        </div>
+                        <code class="text-emerald-400 text-sm block select-all">$ cd your-project</code>
+                        <code class="text-emerald-400 text-sm block select-all">$ vibe init --lang zh-TW</code>
+                    </div>
+                    <p class="text-gray-500 text-xs mt-3">
+                        <span class="lang-zh">它會掃描專案、建立 .vibe/、幫每個 AI 工具生成設定檔。已有的 CLAUDE.md 或 .cursorrules 會被安全匯入並歸檔。</span>
+                        <span class="lang-en">It scans your project, creates .vibe/, and generates config files for each AI tool. Existing CLAUDE.md or .cursorrules are safely imported and archived.</span>
                     </p>
+                </div>
+
+                <!-- Step 3: Daily use -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">3</span>
+                        <h3 class="text-lg font-semibold text-white">
+                            <span class="lang-zh">日常使用——跟 AI 說就好</span>
+                            <span class="lang-en">Daily use — just talk to your AI</span>
+                        </h3>
+                    </div>
+                    <div class="glass-card rounded-xl p-5">
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                    <span class="lang-zh">開工</span><span class="lang-en">Start</span>
+                                </span>
+                                <span class="text-gray-400">
+                                    <span class="lang-zh">跟 AI 說</span><span class="lang-en">Tell AI</span>
+                                </span>
+                                <code class="text-emerald-400 font-mono">"vibe start"</code>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                    <span class="lang-zh">收工</span><span class="lang-en">End</span>
+                                </span>
+                                <span class="text-gray-400">
+                                    <span class="lang-zh">跟 AI 說</span><span class="lang-en">Tell AI</span>
+                                </span>
+                                <code class="text-emerald-400 font-mono">"vibe sync"</code>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                    <span class="lang-zh">查狀態</span><span class="lang-en">Check</span>
+                                </span>
+                                <span class="text-gray-400">
+                                    <span class="lang-zh">跟 AI 說</span><span class="lang-en">Tell AI</span>
+                                </span>
+                                <code class="text-emerald-400 font-mono">"vibe status"</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-white/5 border border-white/10 rounded-lg p-4 text-xs text-gray-400">
+                        <p class="font-semibold text-gray-300 mb-1">
+                            <span class="lang-zh">💡 如果 AI 說「command not found」怎麼辦？</span>
+                            <span class="lang-en">💡 What if AI says "command not found"?</span>
+                        </p>
+                        <p>
+                            <span class="lang-zh">不用擔心。AI 會自動改成直接讀你的 <code class="text-emerald-400">.vibe/state/</code> 檔案，一樣能拿到所有上下文。這是設計好的。</span>
+                            <span class="lang-en">Don't worry. The AI will automatically fall back to reading your <code class="text-emerald-400">.vibe/state/</code> files directly. Same context, just a different path. This is by design.</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

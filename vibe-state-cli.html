@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth antialiased">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vibe-state-cli | Persistent AI Memory for Every Tool</title>
+    <meta name="description" content="One shared brain for all your AI coding tools. Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI — unified state management.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="vibe-state-cli | Persistent AI Memory for Every Tool">
+    <meta property="og:description" content="Your AI forgets everything. This fixes it. One shared brain for all your AI coding tools.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        liyon: { navy: '#0C2340', gold: '#C5A065', dark: '#051120', light: '#1A3A5E' },
+                    },
+                    fontFamily: { sans: ['Inter', 'Noto Sans TC', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        .glass-card { background: rgba(26,58,94,0.25); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(197,160,101,0.1); }
+        .glass-nav { background: rgba(12,35,64,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .lang-en { display: none; }
+        body.en-mode .lang-zh { display: none !important; }
+        body.en-mode .lang-en { display: inline-block !important; }
+        body.en-mode .lang-en-block { display: block !important; }
+        .lang-en-block { display: none; }
+        body.en-mode .lang-zh-block { display: none !important; }
+        .terminal-block { background: rgba(0,0,0,0.6); border: 1px solid rgba(74,222,128,0.2); font-family: 'JetBrains Mono', monospace; }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+    </style>
+
+    <script>
+        const savedLang = (function() { try { return localStorage.getItem('liyon_lang') || 'zh'; } catch(e) { return 'zh'; } })();
+        if (savedLang === 'en') document.documentElement.classList.add('en-mode');
+        function toggleLanguage() {
+            const isEn = document.body.classList.toggle('en-mode');
+            document.documentElement.classList.toggle('en-mode');
+            try { localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh'); } catch(e) {}
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (savedLang === 'en') document.body.classList.add('en-mode');
+        });
+    </script>
+</head>
+
+<body class="bg-liyon-navy text-white antialiased overflow-x-hidden">
+
+    <!-- ==================== Navbar ==================== -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-emerald-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Left -->
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="text-xl font-bold tracking-widest text-white hover:text-liyon-gold transition-colors">LIYON</a>
+                <span class="text-gray-500">×</span>
+                <span class="text-emerald-400 font-semibold font-mono text-lg">vibe-state-cli</span>
+            </div>
+
+            <!-- Center (Desktop) -->
+            <div class="hidden md:flex gap-8 text-sm text-gray-300 font-medium items-center">
+                <a href="#problem" class="hover:text-emerald-400 transition-colors">Problem</a>
+                <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+                <a href="#install" class="hover:text-emerald-400 transition-colors">Install</a>
+            </div>
+
+            <!-- Right -->
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-sm text-gray-400 hover:text-white transition-colors border border-gray-600 rounded px-3 py-1">
+                    <span class="lang-zh">EN</span><span class="lang-en">中文</span>
+                </button>
+                <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-2 border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 rounded-lg px-4 py-2 text-sm font-medium transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>Star on GitHub</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-emerald-500/20 px-6 py-4 space-y-3">
+            <a href="#problem" class="block text-sm text-gray-300 hover:text-emerald-400">Problem</a>
+            <a href="#features" class="block text-sm text-gray-300 hover:text-emerald-400">Features</a>
+            <a href="#install" class="block text-sm text-gray-300 hover:text-emerald-400">Install</a>
+            <button onclick="toggleLanguage()" class="text-sm text-gray-400 hover:text-white border border-gray-600 rounded px-3 py-1">
+                <span class="lang-zh">EN</span><span class="lang-en">中文</span>
+            </button>
+            <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-400 rounded-lg px-4 py-2 text-sm font-medium">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Star on GitHub
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- ==================== Section 1: Hero ==================== -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-16">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Your AI forgets everything.</h1>
+        <p class="text-3xl md:text-5xl font-bold text-emerald-400 mb-6">This fixes it.</p>
+        <p class="text-gray-400 text-lg mb-10 max-w-xl">
+            <span class="lang-zh">你的 AI 每次對話都失憶。這個工具解決它。</span>
+            <span class="lang-en">Persistent memory for every AI coding tool.</span>
+        </p>
+
+        <!-- Terminal install block -->
+        <div class="terminal-block rounded-xl px-6 py-4 mb-10 max-w-md w-full text-left overflow-x-auto">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="terminal-dot bg-red-500"></span>
+                <span class="terminal-dot bg-yellow-500"></span>
+                <span class="terminal-dot bg-green-500"></span>
+            </div>
+            <code class="text-emerald-400 text-sm md:text-base select-all">$ pipx install vibe-state-cli</code>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-2 border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 rounded-lg px-6 py-3 font-medium transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub &rarr;
+            </a>
+            <a href="https://github.com/liyoncso-Theone/vibe-state-cli#quick-start" target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white/5 rounded-lg px-6 py-3 font-medium transition-colors">
+                Documentation &rarr;
+            </a>
+        </div>
+
+        <p class="text-gray-500 text-sm">MIT License &middot; 208 tests &middot; 96% coverage</p>
+    </section>
+
+
+    <!-- ==================== Section 2: Problem ==================== -->
+    <section id="problem" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                <span class="lang-zh">問題出在哪？</span>
+                <span class="lang-en">The problem.</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                <span class="lang-zh">每一個 AI 開發者都在重複這些痛苦。</span>
+                <span class="lang-en">Every AI-assisted developer hits the same walls.</span>
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1: Session Amnesia -->
+                <div class="glass-card rounded-2xl p-6 border-t-2 border-emerald-500/40">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L4.5 10.5M18 12l1.5-1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">
+                        <span class="lang-zh">對話失憶</span>
+                        <span class="lang-en">Session Amnesia</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">你花兩小時跟 Claude 解釋架構。關掉終端，明天它什麼都不記得。</span>
+                        <span class="lang-en">You spend 2 hours explaining your architecture to Claude. Close the terminal. Tomorrow it remembers nothing.</span>
+                    </p>
+                </div>
+
+                <!-- Card 2: Tool Silos -->
+                <div class="glass-card rounded-2xl p-6 border-t-2 border-emerald-500/40">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">
+                        <span class="lang-zh">工具孤島</span>
+                        <span class="lang-en">Tool Silos</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">在 Cursor 修完 bug，切到 Claude Code 做重構——Claude 不知道你剛做了什麼。</span>
+                        <span class="lang-en">Fix a bug in Cursor, switch to Claude Code for refactoring — Claude has no idea what you just did.</span>
+                    </p>
+                </div>
+
+                <!-- Card 3: Rule Duplication -->
+                <div class="glass-card rounded-2xl p-6 border-t-2 border-emerald-500/40">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m0 0a2.625 2.625 0 115.25 0" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">
+                        <span class="lang-zh">規範散落</span>
+                        <span class="lang-en">Rule Duplication</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">CLAUDE.md、.cursorrules、AGENTS.md——三份說一樣的話，全在吃 token。</span>
+                        <span class="lang-en">CLAUDE.md, .cursorrules, AGENTS.md — three files saying the same thing, all eating tokens.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 3: Solution ==================== -->
+    <section id="solution" class="py-20 px-6 bg-liyon-dark/50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="lang-zh">所有 AI 工具共用一個大腦。</span>
+                <span class="lang-en">One shared brain for all your AI tools.</span>
+            </h2>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                <span class="lang-zh">一個 .vibe/ 目錄，統一所有工具的狀態。</span>
+                <span class="lang-en">A single .vibe/ directory that unifies state across every tool.</span>
+            </p>
+
+            <!-- Directory tree -->
+            <div class="terminal-block rounded-xl px-6 py-5 text-left max-w-md mx-auto mb-10 overflow-x-auto">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="terminal-dot bg-red-500"></span>
+                    <span class="terminal-dot bg-yellow-500"></span>
+                    <span class="terminal-dot bg-green-500"></span>
+                </div>
+<pre class="text-emerald-400 text-sm leading-relaxed select-all"><span class="text-gray-400">.vibe/</span>
+├── config.toml
+└── state/
+    ├── current.md
+    ├── tasks.md
+    ├── standards.md
+    └── experiments.md</pre>
+            </div>
+
+            <!-- Adapter pills -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Claude Code</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Cursor</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Windsurf</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Cline</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Roo Code</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">GitHub Copilot</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">Gemini CLI</span>
+                <span class="text-xs border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full">AGENTS.md</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 4: Features ==================== -->
+    <section id="features" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                <span class="lang-zh">5 個指令，就這樣。</span>
+                <span class="lang-en">5 commands. That's it.</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-12">
+                <span class="lang-zh">沒有學習曲線。</span>
+                <span class="lang-en">Zero learning curve.</span>
+            </p>
+
+            <!-- Commands grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="glass-card rounded-2xl p-6">
+                    <code class="font-mono text-emerald-400 text-lg font-semibold">vibe init</code>
+                    <p class="text-gray-400 text-sm mt-3">
+                        <span class="lang-zh">掃描專案，偵測工具，建立 .vibe/</span>
+                        <span class="lang-en">Scan project, detect tools, set up .vibe/</span>
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <code class="font-mono text-emerald-400 text-lg font-semibold">vibe start</code>
+                    <p class="text-gray-400 text-sm mt-3">
+                        <span class="lang-zh">開始工作——AI 看到最新進度</span>
+                        <span class="lang-en">Begin session — AI sees latest progress</span>
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <code class="font-mono text-emerald-400 text-lg font-semibold">vibe sync</code>
+                    <p class="text-gray-400 text-sm mt-3">
+                        <span class="lang-zh">結束工作——從 git 儲存進度</span>
+                        <span class="lang-en">End session — save today's work from git</span>
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <code class="font-mono text-emerald-400 text-lg font-semibold">vibe status</code>
+                    <p class="text-gray-400 text-sm mt-3">
+                        <span class="lang-zh">隨時查看狀態</span>
+                        <span class="lang-en">Check state anytime</span>
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <code class="font-mono text-emerald-400 text-lg font-semibold">vibe adapt</code>
+                    <p class="text-gray-400 text-sm mt-3">
+                        <span class="lang-zh">增減 AI 工具支援</span>
+                        <span class="lang-en">Add or remove AI tool support</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Adapter support matrix -->
+            <h3 class="text-xl font-semibold text-center mb-6">
+                <span class="lang-zh">8 個 Adapter 支援矩陣</span>
+                <span class="lang-en">8 Adapter Support Matrix</span>
+            </h3>
+            <div class="glass-card rounded-2xl p-1 overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead>
+                        <tr class="border-b border-emerald-500/20 text-emerald-400">
+                            <th class="px-4 py-3 font-medium">Tool</th>
+                            <th class="px-4 py-3 font-medium">What vibe generates</th>
+                            <th class="px-4 py-3 font-medium">Sync depth</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Claude Code</td>
+                            <td class="px-4 py-3">CLAUDE.md + .claude/rules/ + 5 slash commands</td>
+                            <td class="px-4 py-3">Full state via @import</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Cursor</td>
+                            <td class="px-4 py-3">.cursor/rules/vibe-standards.mdc</td>
+                            <td class="px-4 py-3">Standards + summary inline</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Windsurf</td>
+                            <td class="px-4 py-3">.windsurf/rules/vibe-standards.md</td>
+                            <td class="px-4 py-3">Standards + summary inline</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Cline</td>
+                            <td class="px-4 py-3">.clinerules/01-vibe-standards.md</td>
+                            <td class="px-4 py-3">Standards + summary inline</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Roo Code</td>
+                            <td class="px-4 py-3">.roo/rules/01-vibe-standards.md</td>
+                            <td class="px-4 py-3">Standards + summary inline</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">GitHub Copilot</td>
+                            <td class="px-4 py-3">.github/copilot-instructions.md</td>
+                            <td class="px-4 py-3">Summary only</td>
+                        </tr>
+                        <tr class="border-b border-white/5">
+                            <td class="px-4 py-3 font-mono text-white">Gemini CLI</td>
+                            <td class="px-4 py-3">GEMINI.md</td>
+                            <td class="px-4 py-3">Full state via @import</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-mono text-white">AGENTS.md</td>
+                            <td class="px-4 py-3">AGENTS.md (cross-tool standard)</td>
+                            <td class="px-4 py-3">Full — single source of truth</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 5: Story ==================== -->
+    <section id="story" class="py-20 px-6 bg-liyon-dark/50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                <span class="lang-zh">公開建造。連教訓一起。</span>
+                <span class="lang-en">Built in public. Lessons included.</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-16">
+                <span class="lang-zh">真實的開發故事，不是行銷文案。</span>
+                <span class="lang-en">Real stories from the build, not marketing copy.</span>
+            </p>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-emerald-500/30 ml-4 space-y-12">
+
+                <!-- Story 1 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <span class="text-xs text-emerald-400 font-mono">Round 2 — Hallucination Audit</span>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <span class="lang-zh">4 個 Agent 同時產生幻覺</span>
+                        <span class="lang-en">4 AI agents, 4 hallucinations</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">
+                        <span class="lang-zh">我們派 4 個 Agent 同時研究 8 個工具。一半的結論是錯的——Claude 不讀 AGENTS.md、<code class="text-emerald-400">.cursorrules</code> 已棄用、MCP「v1.27」是 SDK 版本不是協議版本。教訓：AI 研究結果必須交叉驗證。</span>
+                        <span class="lang-en">We sent 4 AI agents to research 8 tools simultaneously. Half the findings were wrong — Claude doesn't read AGENTS.md, <code class="text-emerald-400">.cursorrules</code> is deprecated, MCP "v1.27" was the SDK version not the protocol. Lesson: AI research must be cross-verified.</span>
+                    </p>
+                    <div class="terminal-block rounded-lg px-4 py-3 text-xs">
+                        <p class="text-red-400"><span class="lang-zh">幻覺：</span><span class="lang-en">Hallucination:</span> "Claude reads AGENTS.md natively"</p>
+                        <p class="text-emerald-400"><span class="lang-zh">真實：</span><span class="lang-en">Reality:</span> Claude only reads CLAUDE.md + .claude/rules/</p>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <span class="text-xs text-emerald-400 font-mono">Post-launch — The Wild</span>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <span class="lang-zh">AI 越界修改了另一個專案的程式碼</span>
+                        <span class="lang-en">AI crossed the project boundary</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">在另一個專案跑 <code class="text-emerald-400">vibe sync</code> 碰到 Windows 編碼 bug。AI 找到 D 槽的開發原始碼直接改了——越過了專案邊界。根因：<code class="text-emerald-400">subprocess.run()</code> 沒指定 <code class="text-emerald-400">encoding="utf-8"</code>。</span>
+                        <span class="lang-en">Running <code class="text-emerald-400">vibe sync</code> in a different project hit a Windows encoding bug. The AI found our source code on D: drive and modified it directly — crossing the project boundary. Root cause: <code class="text-emerald-400">subprocess.run()</code> without explicit <code class="text-emerald-400">encoding="utf-8"</code>.</span>
+                    </p>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <span class="text-xs text-emerald-400 font-mono">v0.3.0 — Senior Review</span>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <span class="lang-zh">最犀利的批評不在程式碼裡</span>
+                        <span class="lang-en">"best-effort, ~40-60%"</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">資深工程師指出文件讓使用者期望超過現實。AI checkpoint 遵從率約 40-60%，Copilot 無法讀 state 檔案。工具最大的風險不在程式碼裡，在使用者的誤解。</span>
+                        <span class="lang-en">Senior engineers (30 years experience) pointed out that our docs made users expect more than reality. AI checkpoint compliance is ~40-60%. Copilot can't read state files. The biggest risk isn't in the code — it's in users' expectations.</span>
+                    </p>
+                </div>
+
+                <!-- Story 4 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <span class="text-xs text-emerald-400 font-mono">v0.3.0 — One Day</span>
+                    <h3 class="text-lg font-semibold mt-2 mb-2">
+                        <span class="lang-zh">一天內從「能用」到「工業級」</span>
+                        <span class="lang-en">From "works" to "industrial grade" in 24 hours</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        <span class="lang-zh">2 輪紅軍審查 + 2 位資深工程師。砍掉 6 個過度設計（指紋、快照、指數退避鎖）。找到修復 11 個安全問題。教訓：複雜度本身就是風險。</span>
+                        <span class="lang-en">2 red-team reviews + 2 senior engineers. Cut 6 over-engineered features (fingerprint, snapshot, exponential backoff locks). Found and fixed 11 security issues. Lesson: complexity itself is risk.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 6: Technical ==================== -->
+    <section class="bg-liyon-dark py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-8">
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-emerald-400">208</p>
+                    <p class="text-gray-400 text-sm mt-1">Automated Tests</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-emerald-400">96%</p>
+                    <p class="text-gray-400 text-sm mt-1">Test Coverage</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-emerald-400">4</p>
+                    <p class="text-gray-400 text-sm mt-1">Security Review Rounds</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-emerald-400">2,600</p>
+                    <p class="text-gray-400 text-sm mt-1">Lines of Code</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 text-sm">2 red-team reviews &middot; 2 senior engineers (30 years experience) &middot; v0.1 to v0.3 in 3 days</p>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 7: Install ==================== -->
+    <section id="install" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                <span class="lang-zh">30 秒開始。</span>
+                <span class="lang-en">Get started in 30 seconds.</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-12">
+                <span class="lang-zh">選一種你喜歡的安裝方式。</span>
+                <span class="lang-en">Pick your preferred install method.</span>
+            </p>
+
+            <!-- Install methods -->
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="terminal-dot bg-red-500"></span>
+                        <span class="terminal-dot bg-yellow-500"></span>
+                        <span class="terminal-dot bg-green-500"></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2"># Recommended</p>
+                    <code class="text-emerald-400 text-sm select-all">$ pipx install vibe-state-cli</code>
+                </div>
+                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="terminal-dot bg-red-500"></span>
+                        <span class="terminal-dot bg-yellow-500"></span>
+                        <span class="terminal-dot bg-green-500"></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2"># Alternative</p>
+                    <code class="text-emerald-400 text-sm select-all">$ pip install vibe-state-cli</code>
+                </div>
+                <div class="terminal-block rounded-xl px-5 py-4 overflow-x-auto">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="terminal-dot bg-red-500"></span>
+                        <span class="terminal-dot bg-yellow-500"></span>
+                        <span class="terminal-dot bg-green-500"></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2"># For uv users</p>
+                    <code class="text-emerald-400 text-sm select-all">$ uv tool install vibe-state-cli</code>
+                </div>
+            </div>
+
+            <!-- Quick Start -->
+            <h3 class="text-xl font-semibold text-center mb-8">
+                <span class="lang-zh">Quick Start</span>
+                <span class="lang-en">Quick Start</span>
+            </h3>
+            <div class="max-w-lg mx-auto space-y-4">
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">1</span>
+                    <code class="terminal-block rounded-lg px-4 py-2 text-sm text-emerald-400 select-all flex-1 overflow-x-auto">pipx install vibe-state-cli</code>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">2</span>
+                    <code class="terminal-block rounded-lg px-4 py-2 text-sm text-emerald-400 select-all flex-1 overflow-x-auto">cd your-project && vibe init</code>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">3</span>
+                    <p class="terminal-block rounded-lg px-4 py-2 text-sm text-gray-300 flex-1">
+                        <span class="lang-zh">告訴你的 AI：</span>
+                        <span class="lang-en">Tell your AI:</span>
+                        <code class="text-emerald-400">"vibe start"</code>
+                    </p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">4</span>
+                    <p class="terminal-block rounded-lg px-4 py-2 text-sm text-gray-300 flex-1">
+                        <span class="lang-zh">收工時：</span>
+                        <span class="lang-en">End of day:</span>
+                        <code class="text-emerald-400">"vibe sync"</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 8: CTA ==================== -->
+    <section class="py-20 px-6 bg-liyon-dark/50 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">
+            <span class="lang-zh">讓你的 AI 有記憶。</span>
+            <span class="lang-en">Give your AI a memory.</span>
+        </h2>
+        <p class="text-gray-400 mb-10 max-w-lg mx-auto">
+            <span class="lang-zh">開源、免費、MIT 授權。</span>
+            <span class="lang-en">Open source, free, MIT licensed.</span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg px-8 py-3 font-semibold transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Star on GitHub
+            </a>
+            <a href="index.html"
+               class="inline-flex items-center justify-center gap-2 border border-liyon-gold text-liyon-gold hover:bg-liyon-gold/10 rounded-lg px-8 py-3 font-semibold transition-colors">
+                Back to LIYON Global
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ==================== Section 9: Footer ==================== -->
+    <footer class="border-t border-emerald-500/10 py-8 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <div>
+                <span class="text-white font-semibold">LIYON Global</span>
+                <span class="text-gray-600 mx-1">&times;</span>
+                <span class="text-emerald-400 font-mono">vibe-state-cli</span>
+                <span class="text-gray-600 mx-2">&middot;</span>
+                An open source project by LIYON Global Enterprise
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">GitHub</a>
+                <a href="https://pypi.org/project/vibe-state-cli/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">PyPI</a>
+                <span>MIT License</span>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 text-xs mt-6">&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</p>
+    </footer>
+
+</body>
+</html>

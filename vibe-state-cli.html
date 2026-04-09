@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vibe-state-cli | Persistent AI Memory for Every Tool</title>
     <meta name="description" content="One shared brain for all your AI coding tools. Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI — unified state management.">
+    <link rel="canonical" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
+    <link rel="alternate" hreflang="en" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
     <meta property="og:title" content="vibe-state-cli | Persistent AI Memory for Every Tool">
     <meta property="og:description" content="Your AI forgets everything. This fixes it. One shared brain for all your AI coding tools.">
+    <meta property="og:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,14 +48,31 @@
         body.en-mode .lang-zh-block { display: none !important; }
         .terminal-block { background: rgba(0,0,0,0.6); border: 1px solid rgba(74,222,128,0.2); font-family: 'JetBrains Mono', monospace; }
         .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+        /* Focus visible */
+        *:focus-visible { outline: 2px solid #4ADE80; outline-offset: 2px; border-radius: 4px; }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 
     <script>
         const savedLang = (function() { try { return localStorage.getItem('liyon_lang') || 'zh'; } catch(e) { return 'zh'; } })();
-        if (savedLang === 'en') document.documentElement.classList.add('en-mode');
+        if (savedLang === 'en') {
+            document.documentElement.classList.add('en-mode');
+            document.documentElement.lang = 'en';
+        }
         function toggleLanguage() {
             const isEn = document.body.classList.toggle('en-mode');
             document.documentElement.classList.toggle('en-mode');
+            document.documentElement.lang = isEn ? 'en' : 'zh-TW';
             try { localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh'); } catch(e) {}
         }
         document.addEventListener('DOMContentLoaded', () => {
@@ -66,7 +89,7 @@
             <!-- Left -->
             <div class="flex items-center gap-2">
                 <a href="index.html" class="text-xl font-bold tracking-widest text-white hover:text-liyon-gold transition-colors">LIYON</a>
-                <span class="text-gray-500">×</span>
+                <span class="text-gray-400">×</span>
                 <span class="text-emerald-400 font-semibold font-mono text-lg">vibe-state-cli</span>
             </div>
 
@@ -111,6 +134,7 @@
         </div>
     </nav>
 
+    <main>
 
     <!-- ==================== Section 1: Hero ==================== -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-16">
@@ -150,7 +174,7 @@
             </a>
         </div>
 
-        <p class="text-gray-500 text-sm"><span class="lang-zh">MIT 授權 · 208 項測試 · 96% 覆蓋率</span><span class="lang-en">MIT License &middot; 208 tests &middot; 96% coverage</span></p>
+        <p class="text-gray-400 text-sm"><span class="lang-zh">MIT 授權 · 208 項測試 · 96% 覆蓋率</span><span class="lang-en">MIT License &middot; 208 tests &middot; 96% coverage</span></p>
     </section>
 
 
@@ -279,12 +303,12 @@
             </p>
             <div class="text-center mb-12">
                 <div class="inline-block terminal-block rounded-lg px-5 py-3 text-sm">
-                    <span class="text-gray-500">
+                    <span class="text-gray-400">
                         <span class="lang-zh">你跟 AI 說：</span>
                         <span class="lang-en">You tell AI:</span>
                     </span>
                     <span class="text-emerald-400 font-mono ml-2">"vibe start"</span>
-                    <span class="text-gray-600 mx-2">→</span>
+                    <span class="text-gray-400/80 mx-2">→</span>
                     <span class="text-gray-400">
                         <span class="lang-zh">AI 自動執行，載入你的進度</span>
                         <span class="lang-en">AI runs it, loads your progress</span>
@@ -562,7 +586,7 @@
                     <p class="text-gray-400 text-sm mt-1"><span class="lang-zh">行程式碼</span><span class="lang-en">Lines of Code</span></p>
                 </div>
             </div>
-            <p class="text-center text-gray-500 text-sm"><span class="lang-zh">2 輪紅軍審查 · 2 位資深工程師（30 年經驗） · 4 天內從 v0.1 到 v0.3.3</span><span class="lang-en">2 red-team reviews &middot; 2 senior engineers (30 years experience) &middot; v0.1 to v0.3.3 in 4 days</span></p>
+            <p class="text-center text-gray-400 text-sm"><span class="lang-zh">2 輪紅軍審查 · 2 位資深工程師（30 年經驗） · 4 天內從 v0.1 到 v0.3.3</span><span class="lang-en">2 red-team reviews &middot; 2 senior engineers (30 years experience) &middot; v0.1 to v0.3.3 in 4 days</span></p>
         </div>
     </section>
 
@@ -619,7 +643,7 @@
                         <code class="text-emerald-400 text-sm block select-all">$ cd your-project</code>
                         <code class="text-emerald-400 text-sm block select-all">$ vibe init --lang zh-TW</code>
                     </div>
-                    <p class="text-gray-500 text-xs mt-3">
+                    <p class="text-gray-400 text-xs mt-3">
                         <span class="lang-zh">它會掃描專案、建立 .vibe/、幫每個 AI 工具生成設定檔。已有的 CLAUDE.md 或 .cursorrules 會被安全匯入並歸檔。</span>
                         <span class="lang-en">It scans your project, creates .vibe/, and generates config files for each AI tool. Existing CLAUDE.md or .cursorrules are safely imported and archived.</span>
                     </p>
@@ -637,7 +661,7 @@
                     <div class="glass-card rounded-xl p-5">
                         <div class="space-y-3 text-sm">
                             <div class="flex items-center gap-4">
-                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                <span class="text-gray-400 w-20 flex-shrink-0">
                                     <span class="lang-zh">開工</span><span class="lang-en">Start</span>
                                 </span>
                                 <span class="text-gray-400">
@@ -646,7 +670,7 @@
                                 <code class="text-emerald-400 font-mono">"vibe start"</code>
                             </div>
                             <div class="flex items-center gap-4">
-                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                <span class="text-gray-400 w-20 flex-shrink-0">
                                     <span class="lang-zh">收工</span><span class="lang-en">End</span>
                                 </span>
                                 <span class="text-gray-400">
@@ -655,7 +679,7 @@
                                 <code class="text-emerald-400 font-mono">"vibe sync"</code>
                             </div>
                             <div class="flex items-center gap-4">
-                                <span class="text-gray-500 w-20 flex-shrink-0">
+                                <span class="text-gray-400 w-20 flex-shrink-0">
                                     <span class="lang-zh">查狀態</span><span class="lang-en">Check</span>
                                 </span>
                                 <span class="text-gray-400">
@@ -705,6 +729,8 @@
     </section>
 
 
+    </main>
+
     <!-- ==================== Section 9: Footer ==================== -->
     <footer class="border-t border-emerald-500/10 py-10 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
@@ -732,10 +758,48 @@
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-emerald-500/10 text-center text-gray-600 text-xs">
+        <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-emerald-500/10 text-center text-gray-400/80 text-xs">
             <span>&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</span>
         </div>
     </footer>
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "vibe-state-cli",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Persistent AI memory across coding tools. One shared brain for Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI.",
+        "url": "https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html",
+        "downloadUrl": "https://pypi.org/project/vibe-state-cli/",
+        "softwareVersion": "0.3",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "provider": {
+            "@type": "Organization",
+            "name": "LIYON Global Enterprise",
+            "url": "https://liyoncso-theone.github.io/Liyon-Global/"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Theone Lin",
+            "url": "https://www.linkedin.com/in/theone-lin/"
+        }
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "LIYON Global", "item": "https://liyoncso-theone.github.io/Liyon-Global/" },
+            { "@type": "ListItem", "position": 2, "name": "vibe-state-cli", "item": "https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html" }
+        ]
+    }
+    </script>
 
 </body>
 </html>

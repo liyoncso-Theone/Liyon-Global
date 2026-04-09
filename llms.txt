@@ -17,6 +17,7 @@ AI clinic operations director for aesthetics and dental practices. Post-op care 
 
 ### CloakFetch (企業透視)
 Taiwan business data API. 1.8M companies, sub-5ms response. REST API for CRM, risk systems, and AI agents.
+- URL: https://liyon-products.pages.dev/cloakfetch/
 
 ### PhantomDecomp (數據煉金)
 Enterprise heterogeneous data integration and governance. Validated on 489M records, 4 sources, 25.75 GB on a single 32GB machine.

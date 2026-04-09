@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liyoncso-theone.github.io/Liyon-Global/sitemap.xml
+
+# AI crawler knowledge file
+# See https://liyoncso-theone.github.io/Liyon-Global/llms.txt

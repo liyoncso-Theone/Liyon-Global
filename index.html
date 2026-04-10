@@ -712,7 +712,8 @@
                     var subj = el.getAttribute('data-s') || '';
                     if (el.tagName === 'A') {
                         el.href = 'mailto:' + addr + (subj ? '?subject=' + encodeURIComponent(subj) : '');
-                        if (!el.textContent.trim() || el.textContent.includes('[at]')) el.textContent = addr;
+                        // Only rewrite textContent on leaf <a> tags — don't wipe nested icon/title/<p> children
+                        if (el.children.length === 0 && (!el.textContent.trim() || el.textContent.includes('[at]'))) el.textContent = addr;
                     } else {
                         el.textContent = addr;
                     }

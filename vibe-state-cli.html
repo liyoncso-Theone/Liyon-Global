@@ -837,5 +837,24 @@
     }
     </script>
 
+    <!-- Email obfuscation — assemble mailto: on load to prevent bot scraping -->
+    <script>
+        try {
+            document.querySelectorAll('[data-e]').forEach(el => {
+                const parts = atob(el.getAttribute('data-e')).split('|');
+                const addr = parts[0] + '@' + parts[1];
+                const subj = el.getAttribute('data-s') || '';
+                if (el.tagName === 'A') {
+                    el.href = 'mailto:' + addr + (subj ? '?subject=' + encodeURIComponent(subj) : '');
+                    if (el.children.length === 0 && (!el.textContent.trim() || el.textContent.includes('[at]'))) {
+                        el.textContent = addr;
+                    }
+                } else {
+                    el.textContent = addr;
+                }
+            });
+        } catch(e) {}
+    </script>
+
 </body>
 </html>

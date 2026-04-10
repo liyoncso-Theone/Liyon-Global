@@ -553,45 +553,59 @@
                 <span class="lang-en">The products above are how I solve problems. But every company's pain is different — you don't need to understand them first. Just tell me what's blocking you. 30 minutes. You talk, I listen. If I can't help, I'll tell you straight.</span>
             </p>
 
-            <!-- 3-Card Contact -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-                <!-- Book -->
-                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/30 text-center" style="box-shadow: 0 0 30px rgba(197,160,101,0.15)">
-                    <div class="text-2xl mb-3">📅</div>
-                    <h3 class="font-bold text-white mb-2 text-sm">
-                        <span class="lang-zh">預約免費諮詢</span><span class="lang-en">Book a Free Call</span>
+            <!-- Unified 3-Card Contact Module -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Card 1: 預約線上會議 -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">預約線上會議</span><span class="lang-en">Book a Call</span>
                     </h3>
+                    <p class="text-xs text-gray-400 mb-4 flex-grow">
+                        <span class="lang-zh">30 min · 免費</span><span class="lang-en">30 min · free</span>
+                    </p>
                     <a href="https://calendar.app.google/GYbXq2mqY8cGqB3d7" target="_blank" rel="noopener noreferrer"
                         class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
                         <span class="lang-zh">選擇時段</span><span class="lang-en">Pick a Time</span>
                     </a>
-                    <p class="text-xs text-gray-400/80 mt-2">30 min · free</p>
                 </div>
-                <!-- Email -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
-                    <div class="text-2xl mb-3">✉️</div>
-                    <h3 class="font-bold text-white mb-2 text-sm">
-                        <span class="lang-zh">寫信給我</span><span class="lang-en">Email Me</span>
+                <!-- Card 2: 寄送 Email -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">寄送 Email</span><span class="lang-en">Send Email</span>
                     </h3>
+                    <p class="text-xs text-gray-400 mb-4 font-mono flex-grow break-all" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==">liyon.global[at]gmail.com</p>
                     <a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ=="
                         class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
                         <span class="lang-zh">發送郵件</span><span class="lang-en">Send Email</span>
                     </a>
-                    <p class="text-xs text-gray-400/80 mt-2 font-mono" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==">liyon.global[at]gmail.com</p>
                 </div>
-                <!-- Phone -->
-                <div class="glass-card rounded-2xl p-6 border border-white/10 text-center">
-                    <div class="text-2xl mb-3">☎️</div>
-                    <h3 class="font-bold text-white mb-2 text-sm">
-                        <span class="lang-zh">直接來電</span><span class="lang-en">Call Me</span>
+                <!-- Card 3: 直接來電 -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">直接來電</span><span class="lang-en">Call Us</span>
                     </h3>
-                    <a href="tel:+886-3-3558665"
-                        class="inline-block w-full px-4 py-2.5 border border-gray-600 text-gray-300 font-bold rounded-lg hover:border-liyon-gold hover:text-white transition-all text-sm">
-                        03-3558665 #103
-                    </a>
-                    <p class="text-xs text-gray-400/80 mt-2">
+                    <p class="text-xs text-gray-400 mb-4 flex-grow">
                         <span class="lang-zh">週一至週五 9:00-18:00</span><span class="lang-en">Mon–Fri 9:00–18:00</span>
                     </p>
+                    <a href="tel:+886-3-3558665"
+                        class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
+                        03-3558665 #103
+                    </a>
                 </div>
             </div>
         </div>

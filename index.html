@@ -216,14 +216,14 @@
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            const isHidden = menu.classList.toggle('hidden');
-            btn.setAttribute('aria-expanded', !isHidden);
+        btn?.addEventListener('click', () => {
+            const isHidden = menu?.classList.toggle('hidden');
+            btn?.setAttribute('aria-expanded', String(!isHidden));
         });
-        menu.querySelectorAll('a').forEach(link => {
+        menu?.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                btn.setAttribute('aria-expanded', 'false');
+                menu?.classList.add('hidden');
+                btn?.setAttribute('aria-expanded', 'false');
             });
         });
     </script>

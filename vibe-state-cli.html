@@ -934,5 +934,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         } catch(e) {}
     </script>
 
+    <!-- Smooth scroll for anchor links -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                const el = document.querySelector(targetId);
+                if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.pushState(null, '', targetId);
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

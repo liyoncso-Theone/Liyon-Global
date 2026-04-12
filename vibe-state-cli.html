@@ -904,11 +904,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Language toggle (inline — this page doesn't use shared/nav.js) -->
     <script>
-        const savedLang = (function() { try { return localStorage.getItem('liyon_lang') || 'zh'; } catch(e) { return 'zh'; } })();
-        if (savedLang === 'en') {
-            document.documentElement.classList.add('en-mode');
-            document.documentElement.lang = 'en';
-        }
         function toggleLanguage() {
             const isEn = document.body.classList.toggle('en-mode');
             document.documentElement.classList.toggle('en-mode');

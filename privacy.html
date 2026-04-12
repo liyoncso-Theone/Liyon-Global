@@ -345,17 +345,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <script>
-        // 語言初始化：先設定 <html> class（避免閃爍），DOM ready 後再處理 body
-        const savedLang = localStorage.getItem('liyon_lang') || 'zh';
-        if (savedLang === 'en') {
-            document.documentElement.classList.add('en-mode');
-        }
-
         function toggleLanguage() {
             const body = document.body;
             const isEn = body.classList.toggle('en-mode');
             document.documentElement.classList.toggle('en-mode');
-            localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh');
+            try { localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh'); } catch(e) {}
         }
 
         document.addEventListener('DOMContentLoaded', () => {

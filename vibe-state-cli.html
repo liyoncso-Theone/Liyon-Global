@@ -10,18 +10,28 @@
     <link rel="alternate" hreflang="zh-TW" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
     <link rel="alternate" hreflang="en" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html?lang=en">
     <link rel="alternate" hreflang="x-default" href="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
-    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
     <meta property="og:title" content="vibe-state-cli | Persistent AI Memory for Every Tool">
-    <meta property="og:description" content="Your AI forgets everything. This fixes it. One shared brain for all your AI coding tools.">
+    <meta property="og:description" content="One shared brain for all your AI coding tools. Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI — unified state management.">
     <meta property="og:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
+    <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html">
 
-    <!-- Tailwind CSS -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="vibe-state-cli | Persistent AI Memory for Every Tool">
+    <meta name="twitter:description" content="One shared brain for all your AI coding tools. Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, Gemini CLI — unified state management.">
+    <link rel="icon" type="image/png" href="https://liyoncso-theone.github.io/Liyon-Global/images/favicon.png">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCG9N2PL');</script>
+<!-- End Google Tag Manager -->
     <link rel="stylesheet" href="tailwind.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
@@ -53,34 +63,28 @@
             }
         }
     </style>
-
     <script>
-        const savedLang = (function() { try { return localStorage.getItem('liyon_lang') || 'zh'; } catch(e) { return 'zh'; } })();
+        let savedLang = 'zh';
+        try { savedLang = localStorage.getItem('liyon_lang') || 'zh'; } catch(e) {}
         if (savedLang === 'en') {
             document.documentElement.classList.add('en-mode');
             document.documentElement.lang = 'en';
         }
-        function toggleLanguage() {
-            const isEn = document.body.classList.toggle('en-mode');
-            document.documentElement.classList.toggle('en-mode');
-            document.documentElement.lang = isEn ? 'en' : 'zh-TW';
-            try { localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh'); } catch(e) {}
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            if (savedLang === 'en') document.body.classList.add('en-mode');
-        });
-    </script>
-</head>
+    </script></head>
 
 <body class="bg-liyon-navy text-white antialiased overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCG9N2PL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
     <!-- ==================== Navbar ==================== -->
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-liyon-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Left -->
             <div class="flex items-center gap-2">
-                <a href="index.html" class="text-xl font-bold tracking-widest text-white hover:text-liyon-gold transition-colors">LIYON</a>
-                <span class="text-gray-400">×</span>
+                <a href="https://liyoncso-theone.github.io/Liyon-Global/" class="text-xl font-bold tracking-widest text-white hover:text-liyon-gold transition-colors">LIYON</a>
+                <span class="text-gray-400">&times;</span>
                 <span class="text-emerald-400 font-semibold font-mono text-lg">vibe-state-cli</span>
             </div>
 
@@ -129,8 +133,7 @@
         </div>
     </nav>
 
-    <main>
-
+<main>
     <!-- ==================== Section 1: Hero ==================== -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-16">
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
@@ -307,7 +310,7 @@
                         <span class="lang-en">You tell AI:</span>
                     </span>
                     <span class="text-emerald-400 font-mono ml-2">"vibe start"</span>
-                    <span class="text-gray-400/80 mx-2">→</span>
+                    <span class="text-gray-400/80 mx-2">&rarr;</span>
                     <span class="text-gray-400">
                         <span class="lang-zh">AI 自動執行，載入你的進度</span>
                         <span class="lang-en">AI runs it, loads your progress</span>
@@ -424,7 +427,7 @@
             </h2>
             <div class="grid sm:grid-cols-2 gap-4">
                 <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <span class="text-red-400 font-bold mt-0.5">&#10005;</span>
                     <p class="text-gray-300 text-sm">
                         <strong class="text-white">
                             <span class="lang-zh">不呼叫任何 API。</span>
@@ -435,7 +438,7 @@
                     </p>
                 </div>
                 <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <span class="text-red-400 font-bold mt-0.5">&#10005;</span>
                     <p class="text-gray-300 text-sm">
                         <strong class="text-white">
                             <span class="lang-zh">不碰你的 git。</span>
@@ -446,7 +449,7 @@
                     </p>
                 </div>
                 <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <span class="text-red-400 font-bold mt-0.5">&#10005;</span>
                     <p class="text-gray-300 text-sm">
                         <strong class="text-white">
                             <span class="lang-zh">不綁架你。</span>
@@ -457,7 +460,7 @@
                     </p>
                 </div>
                 <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <span class="text-red-400 font-bold mt-0.5">✕</span>
+                    <span class="text-red-400 font-bold mt-0.5">&#10005;</span>
                     <p class="text-gray-300 text-sm">
                         <strong class="text-white">
                             <span class="lang-zh">不改變你的工作方式。</span>
@@ -619,8 +622,8 @@
                         <code class="text-emerald-400 text-sm block select-all">$ pipx install vibe-state-cli</code>
                     </div>
                     <p class="text-yellow-400/80 text-xs mt-3">
-                        <span class="lang-zh">⚠️ 跑完後，<strong>關掉終端和 IDE，重新開</strong>。新的 PATH 只在重啟後生效。</span>
-                        <span class="lang-en">⚠️ After running, <strong>close and reopen your terminal and IDE</strong>. New PATH only takes effect after restart.</span>
+                        <span class="lang-zh">&#9888;&#65039; 跑完後，<strong>關掉終端和 IDE，重新開</strong>。新的 PATH 只在重啟後生效。</span>
+                        <span class="lang-en">&#9888;&#65039; After running, <strong>close and reopen your terminal and IDE</strong>. New PATH only takes effect after restart.</span>
                     </p>
                 </div>
 
@@ -690,8 +693,8 @@
                     </div>
                     <div class="mt-4 bg-white/5 border border-white/10 rounded-lg p-4 text-xs text-gray-400">
                         <p class="font-semibold text-gray-300 mb-1">
-                            <span class="lang-zh">💡 如果 AI 說「command not found」怎麼辦？</span>
-                            <span class="lang-en">💡 What if AI says "command not found"?</span>
+                            <span class="lang-zh">&#128161; 如果 AI 說「command not found」怎麼辦？</span>
+                            <span class="lang-en">&#128161; What if AI says "command not found"?</span>
                         </p>
                         <p>
                             <span class="lang-zh">不用擔心。AI 會自動改成直接讀你的 <code class="text-emerald-400">.vibe/state/</code> 檔案，一樣能拿到所有上下文。這是設計好的。</span>
@@ -720,79 +723,84 @@
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                 <span class="lang-zh">在 GitHub 上 Star</span><span class="lang-en">Star on GitHub</span>
             </a>
-            <a href="index.html"
+            <a href="https://liyoncso-theone.github.io/Liyon-Global/"
                class="inline-flex items-center justify-center gap-2 border border-liyon-gold text-liyon-gold hover:bg-liyon-gold/10 rounded-2xl px-8 py-3 font-semibold transition-colors">
                 <span class="lang-zh">回到 LIYON 官網</span><span class="lang-en">Back to LIYON Global</span>
             </a>
         </div>
 
-        <!-- Unified 3-Card Contact Module -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10">
-            <!-- Card 1: 預約線上會議 -->
-            <div class="glass-card rounded-2xl p-6 border border-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300 flex flex-col text-center">
-                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-400/10 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
+            <!-- Unified 3-Card Contact Module -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <!-- Card 1: 預約線上會議 -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">預約線上會議</span><span class="lang-en">Book a Call</span>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 flex-grow">
+                        <span class="lang-zh">30 min · 免費</span><span class="lang-en">30 min · free</span>
+                    </p>
+                    <a href="https://calendar.app.google/GYbXq2mqY8cGqB3d7" target="_blank" rel="noopener noreferrer"
+                        class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
+                        <span class="lang-zh">選擇時段</span><span class="lang-en">Pick a Time</span>
+                    </a>
                 </div>
-                <h3 class="font-bold text-white mb-1 text-sm">
-                    <span class="lang-zh">預約線上會議</span><span class="lang-en">Book a Call</span>
-                </h3>
-                <p class="text-xs text-gray-400 mb-4 flex-grow">
-                    <span class="lang-zh">30 min · 免費</span><span class="lang-en">30 min · free</span>
-                </p>
-                <a href="https://calendar.app.google/GYbXq2mqY8cGqB3d7" target="_blank" rel="noopener noreferrer"
-                    class="inline-block w-full px-4 py-2.5 bg-emerald-400 text-liyon-navy font-bold rounded-lg hover:bg-emerald-400/80 transition-all text-sm">
-                    <span class="lang-zh">選擇時段</span><span class="lang-en">Pick a Time</span>
-                </a>
-            </div>
-            <!-- Card 2: 寄送 Email -->
-            <div class="glass-card rounded-2xl p-6 border border-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300 flex flex-col text-center">
-                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-400/10 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
+                <!-- Card 2: 寄送 Email -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">寄送 Email</span><span class="lang-en">Send Email</span>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 font-mono flex-grow break-all" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==">liyon.global[at]gmail.com</p>
+                    <a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ=="
+                        class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
+                        <span class="lang-zh">發送郵件</span><span class="lang-en">Send Email</span>
+                    </a>
                 </div>
-                <h3 class="font-bold text-white mb-1 text-sm">
-                    <span class="lang-zh">寄送 Email</span><span class="lang-en">Send Email</span>
-                </h3>
-                <p class="text-xs text-gray-400 mb-4 font-mono flex-grow break-all" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==">liyon.global[at]gmail.com</p>
-                <a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ=="
-                    class="inline-block w-full px-4 py-2.5 bg-emerald-400 text-liyon-navy font-bold rounded-lg hover:bg-emerald-400/80 transition-all text-sm">
-                    <span class="lang-zh">發送郵件</span><span class="lang-en">Send Email</span>
-                </a>
-            </div>
-            <!-- Card 3: 直接來電 -->
-            <div class="glass-card rounded-2xl p-6 border border-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300 flex flex-col text-center">
-                <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-400/10 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
+                <!-- Card 3: 直接來電 -->
+                <div class="glass-card rounded-2xl p-6 border border-liyon-gold/20 hover:border-liyon-gold/40 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-liyon-gold/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-liyon-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-1 text-sm">
+                        <span class="lang-zh">直接來電</span><span class="lang-en">Call Us</span>
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 flex-grow">
+                        <span class="lang-zh">週一至週五 9:00-18:00</span><span class="lang-en">Mon–Fri 9:00–18:00</span>
+                    </p>
+                    <a href="tel:+886-3-3558665"
+                        class="inline-block w-full px-4 py-2.5 bg-liyon-gold text-liyon-navy font-bold rounded-lg hover:bg-liyon-gold/80 transition-all text-sm">
+                        03-3558665 #103
+                    </a>
                 </div>
-                <h3 class="font-bold text-white mb-1 text-sm">
-                    <span class="lang-zh">直接來電</span><span class="lang-en">Call Us</span>
-                </h3>
-                <p class="text-xs text-gray-400 mb-4 flex-grow">
-                    <span class="lang-zh">週一至週五 9:00-18:00</span><span class="lang-en">Mon–Fri 9:00–18:00</span>
-                </p>
-                <a href="tel:+886-3-3558665"
-                    class="inline-block w-full px-4 py-2.5 bg-emerald-400 text-liyon-navy font-bold rounded-lg hover:bg-emerald-400/80 transition-all text-sm">
-                    03-3558665 #103
-                </a>
             </div>
-        </div>
     </section>
+</main>
 
-
-    </main>
-
-    <!-- ==================== Section 9: Footer ==================== -->
-    <footer class="bg-liyon-navy text-white py-10 border-t border-liyon-gold/10">
+    <footer class="bg-black py-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+
+            <!-- Col 1: Company -->
             <div>
-                <h4 class="font-bold text-lg">LIYON <span class="text-liyon-gold">Global</span></h4>
-                <p class="text-gray-400 text-sm mt-2">LIYON Global Enterprise Co., Ltd.<br><span class="lang-zh">立盈國際興業股份有限公司</span></p>
-                <p class="text-gray-400 text-xs mt-1"><span class="lang-zh">統編：60355352</span><span class="lang-en">Tax ID: 60355352</span></p>
+                <h4 class="text-white font-bold text-lg">LIYON <span class="text-liyon-gold">Global</span></h4>
+                <p class="text-gray-400 text-sm mt-2">
+                    LIYON Global Enterprise Co., Ltd.<br>
+                    <span class="lang-zh">立盈國際興業股份有限公司</span>
+                </p>
+                <p class="text-gray-400 text-xs mt-1">
+                    <span class="lang-zh">統編：60355352</span>
+                    <span class="lang-en">Tax ID: 60355352</span>
+                </p>
                 <div class="flex space-x-4 mt-4 justify-center md:justify-start">
                     <a href="https://www.linkedin.com/in/theone-lin/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-liyon-gold transition-colors" aria-label="LinkedIn">
                         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -806,38 +814,56 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Col 2: Products -->
             <div>
-                <h5 class="font-bold mb-3"><span class="lang-zh">產品</span><span class="lang-en">Products</span></h5>
-                <ul class="text-gray-400 text-sm space-y-1">
-                    <li><a href="index.html" class="hover:text-liyon-gold transition-colors"><span class="lang-zh">← LIYON 官網</span><span class="lang-en">← LIYON Homepage</span></a></li>
+                <h5 class="text-white font-bold mb-3">
+                    <span class="lang-zh">產品</span>
+                    <span class="lang-en">Products</span>
+                </h5>
+                <ul class="text-gray-400 text-sm space-y-2">
                     <li><a href="https://liyon-products.pages.dev/probrain/" class="hover:text-liyon-gold transition-colors">ProBrain ↗</a></li>
                     <li><a href="https://liyon-products.pages.dev/cloakfetch/" class="hover:text-liyon-gold transition-colors">CloakFetch ↗</a></li>
                     <li><a href="https://liyon-products.pages.dev/phantomdecomp/" class="hover:text-liyon-gold transition-colors">PhantomDecomp ↗</a></li>
                     <li><a href="https://slideflow-ch3.pages.dev/" class="hover:text-liyon-gold transition-colors">SlideFlow ↗</a></li>
                     <li><a href="https://liyon-products.pages.dev/scribe/" class="hover:text-liyon-gold transition-colors">LIYON Scribe ↗</a></li>
                     <li class="pt-2 mt-2 border-t border-white/10">
-                        <span class="text-liyon-gold font-medium">vibe-state-cli</span>
-                        <span class="text-[10px] border border-liyon-gold/30 text-liyon-gold px-1 rounded">OSS</span>
+                        <a href="vibe-state-cli.html" class="hover:text-liyon-gold transition-colors flex items-center gap-2 justify-center md:justify-start">
+                            vibe-state-cli
+                            <span class="text-[10px] border border-liyon-gold/30 text-liyon-gold px-1 rounded">OSS</span>
+                        </a>
                     </li>
-                    <li class="pl-4 text-xs"><a href="https://github.com/liyoncso-Theone/vibe-state-cli" target="_blank" rel="noopener noreferrer" class="hover:text-liyon-gold transition-colors">GitHub</a> · <a href="https://pypi.org/project/vibe-state-cli/" target="_blank" rel="noopener noreferrer" class="hover:text-liyon-gold transition-colors">PyPI</a></li>
                 </ul>
             </div>
+
+            <!-- Col 3: Contact -->
             <div>
-                <h5 class="font-bold mb-3"><span class="lang-zh">聯絡資訊</span><span class="lang-en">Contact</span></h5>
+                <h5 class="text-white font-bold mb-3">
+                    <span class="lang-zh">聯絡資訊</span>
+                    <span class="lang-en">Contact</span>
+                </h5>
                 <ul class="text-gray-400 text-sm space-y-1">
-                    <li><span class="lang-zh">電話：</span><span class="lang-en">Tel: </span><a href="tel:+886-3-3558665" class="hover:text-liyon-gold transition-colors">03-3558665 #103</a></li>
-                    <li><span class="lang-zh">信箱：</span><span class="lang-en">Email: </span><a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==" class="hover:text-liyon-gold transition-colors">liyon.global[at]gmail.com</a></li>
+                    <li><strong class="lang-zh">電話：</strong><strong class="lang-en">Tel: </strong><a href="tel:+886-3-3558665" class="hover:text-liyon-gold transition-colors">03-3558665 #103</a></li>
+                    <li><strong class="lang-zh">傳真：</strong><strong class="lang-en">Fax: </strong>03-3558685</li>
+                    <li><strong class="lang-zh">信箱：</strong><strong class="lang-en">Email: </strong><a href="#" data-e="bGl5b24uZ2xvYmFsfGdtYWlsLmNvbQ==" class="hover:text-liyon-gold transition-colors">liyon.global[at]gmail.com</a></li>
                 </ul>
+                <p class="text-gray-400 text-sm mt-3">
+                    <span class="lang-zh"><strong>地址：</strong><br>330 桃園市桃園區經國路11號15樓之1</span>
+                    <span class="lang-en"><strong>Address:</strong><br>15F.-1, No. 11, Jingguo Rd., Taoyuan Dist., Taoyuan City 330, Taiwan</span>
+                </p>
                 <p class="text-gray-400 text-xs mt-3">
-                    <a href="privacy.html" class="hover:text-liyon-gold transition-colors"><span class="lang-zh">隱私權保護與服務條款</span><span class="lang-en">Privacy & Terms</span></a>
+                    <a href="privacy.html" class="hover:text-liyon-gold transition-colors">
+                        <span class="lang-zh">隱私權保護與服務條款</span>
+                        <span class="lang-en">Privacy & Terms</span>
+                    </a>
                 </p>
             </div>
         </div>
+
         <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-white/10 text-center text-gray-400/80 text-xs">
             <span>&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</span>
         </div>
     </footer>
-
     <!-- JSON-LD: SoftwareApplication -->
     <script type="application/ld+json">
     {
@@ -874,6 +900,24 @@
             { "@type": "ListItem", "position": 2, "name": "vibe-state-cli", "item": "https://liyoncso-theone.github.io/Liyon-Global/vibe-state-cli.html" }
         ]
     }
+    </script>
+
+    <!-- Language toggle (inline — this page doesn't use shared/nav.js) -->
+    <script>
+        const savedLang = (function() { try { return localStorage.getItem('liyon_lang') || 'zh'; } catch(e) { return 'zh'; } })();
+        if (savedLang === 'en') {
+            document.documentElement.classList.add('en-mode');
+            document.documentElement.lang = 'en';
+        }
+        function toggleLanguage() {
+            const isEn = document.body.classList.toggle('en-mode');
+            document.documentElement.classList.toggle('en-mode');
+            document.documentElement.lang = isEn ? 'en' : 'zh-TW';
+            try { localStorage.setItem('liyon_lang', isEn ? 'en' : 'zh'); } catch(e) {}
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (savedLang === 'en') document.body.classList.add('en-mode');
+        });
     </script>
 
     <!-- Email obfuscation — assemble mailto: on load to prevent bot scraping -->

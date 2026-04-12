@@ -7,34 +7,35 @@
     <title>立盈國際 LIYON Global | AI Products & Data Infrastructure</title>
     <meta name="description" content="AI 產品與開源工具：ProBrain 診所 AI 營運、CloakFetch 企業資料 API、PhantomDecomp 資料整合 ETL、SlideFlow 免費簡報編輯、LIYON Scribe 離線字幕轉錄、vibe-state-cli 開源 AI 記憶管理。立盈國際興業。">
     <link rel="canonical" href="https://liyoncso-theone.github.io/Liyon-Global/">
+    <link rel="alternate" hreflang="zh-TW" href="https://liyoncso-theone.github.io/Liyon-Global/">
+    <link rel="alternate" hreflang="en" href="https://liyoncso-theone.github.io/Liyon-Global/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://liyoncso-theone.github.io/Liyon-Global/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/">
     <meta property="og:title" content="立盈國際 LIYON Global | AI Products & Data Infrastructure">
-    <meta property="og:description" content="AI products & open source tools: ProBrain clinic ops, CloakFetch business data API, PhantomDecomp ETL, SlideFlow presentation editor, LIYON Scribe transcription, vibe-state-cli AI memory management.">
+    <meta property="og:description" content="AI 產品與開源工具：ProBrain 診所 AI 營運、CloakFetch 企業資料 API、PhantomDecomp 資料整合 ETL、SlideFlow 免費簡報編輯、LIYON Scribe 離線字幕轉錄、vibe-state-cli 開源 AI 記憶管理。立盈國際興業。">
     <meta property="og:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://liyoncso-theone.github.io/Liyon-Global/">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="立盈國際 LIYON Global | AI Products & Data Infrastructure">
-    <meta name="twitter:description" content="AI products & open source: ProBrain, CloakFetch, PhantomDecomp, SlideFlow, LIYON Scribe, vibe-state-cli. By LIYON Global Enterprise.">
-    <meta name="twitter:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
-
-    <link rel="alternate" hreflang="zh-TW" href="https://liyoncso-theone.github.io/Liyon-Global/">
-    <link rel="alternate" hreflang="en" href="https://liyoncso-theone.github.io/Liyon-Global/?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://liyoncso-theone.github.io/Liyon-Global/">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
-    <!-- Tailwind CSS -->
+    <meta name="twitter:description" content="AI 產品與開源工具：ProBrain 診所 AI 營運、CloakFetch 企業資料 API、PhantomDecomp 資料整合 ETL、SlideFlow 免費簡報編輯、LIYON Scribe 離線字幕轉錄、vibe-state-cli 開源 AI 記憶管理。立盈國際興業。">
+    <link rel="icon" type="image/png" href="https://liyoncso-theone.github.io/Liyon-Global/images/favicon.png">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCG9N2PL');</script>
+<!-- End Google Tag Manager -->
     <link rel="stylesheet" href="tailwind.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image" content="https://liyoncso-theone.github.io/Liyon-Global/images/og-social-card.png?v=4">
 
     <style>
         body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
@@ -77,7 +78,6 @@
             }
         }
     </style>
-
     <script>
         let savedLang = 'zh';
         try { savedLang = localStorage.getItem('liyon_lang') || 'zh'; } catch(e) {}
@@ -85,40 +85,13 @@
             document.documentElement.classList.add('en-mode');
             document.documentElement.lang = 'en';
         }
-
-        function updateCalendarLinks(lang) {
-            const calendarLinks = document.querySelectorAll('a[href*="calendar.app.google"]');
-            calendarLinks.forEach(link => {
-                const url = new URL(link.href);
-                if (lang === 'en') {
-                    url.searchParams.set('hl', 'en');
-                } else {
-                    url.searchParams.delete('hl');
-                }
-                link.href = url.toString();
-            });
-        }
-
-        function toggleLanguage() {
-            const body = document.body;
-            const isEn = body.classList.toggle('en-mode');
-            document.documentElement.classList.toggle('en-mode');
-            document.documentElement.lang = isEn ? 'en' : 'zh-TW';
-            const newLang = isEn ? 'en' : 'zh';
-            try { localStorage.setItem('liyon_lang', newLang); } catch(e) {}
-            updateCalendarLinks(newLang);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (savedLang === 'en') {
-                document.body.classList.add('en-mode');
-                updateCalendarLinks('en');
-            }
-        });
-    </script>
-</head>
+    </script></head>
 
 <body class="bg-liyon-navy text-white antialiased overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCG9N2PL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
     <!-- ==================== Navbar ==================== -->
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-liyon-gold/20 transition-all duration-300">
@@ -202,7 +175,7 @@
         });
     </script>
 
-    <main>
+<main>
 
     <!-- ==================== 1. Hero ==================== -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-grid">
@@ -593,9 +566,8 @@
         </div>
     </section>
 
-    </main>
+</main>
 
-    <!-- ==================== 5. Footer ==================== -->
     <footer class="bg-black py-10 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
 
@@ -673,52 +645,6 @@
             <span>&copy; 2026 LIYON Global Enterprise. Rooted in Truth, Overflowing with Grace.</span>
         </div>
     </footer>
-
-    <!-- Smooth Scroll -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (!targetId || !targetId.startsWith('#')) return;
-                e.preventDefault();
-                if (targetId === '#') {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return;
-                }
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.pushState(null, null, targetId);
-                }
-            });
-        });
-    </script>
-
-    <!-- Email obfuscation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                document.querySelectorAll('[data-e]').forEach(function(el) {
-                    var parts = atob(el.getAttribute('data-e')).split('|');
-                    var addr = parts[0] + '@' + parts[1];
-                    var subj = el.getAttribute('data-s') || '';
-                    if (el.tagName === 'A') {
-                        el.href = 'mailto:' + addr + (subj ? '?subject=' + encodeURIComponent(subj) : '');
-                        // Only rewrite textContent on leaf <a> tags — don't wipe nested icon/title/<p> children
-                        if (el.children.length === 0 && (!el.textContent.trim() || el.textContent.includes('[at]'))) el.textContent = addr;
-                    } else {
-                        el.textContent = addr;
-                    }
-                });
-            } catch(e) {}
-        });
-    </script>
-
-    <!-- JSON-LD -->
     <!-- JSON-LD: Organization -->
     <script type="application/ld+json">
     {
@@ -790,6 +716,83 @@
         ]
     }
     </script>
-</body>
 
+    <!-- Language Toggle (with calendar link update) -->
+    <script>
+        function updateCalendarLinks(lang) {
+            const calendarLinks = document.querySelectorAll('a[href*="calendar.app.google"]');
+            calendarLinks.forEach(link => {
+                const url = new URL(link.href);
+                if (lang === 'en') {
+                    url.searchParams.set('hl', 'en');
+                } else {
+                    url.searchParams.delete('hl');
+                }
+                link.href = url.toString();
+            });
+        }
+
+        function toggleLanguage() {
+            const body = document.body;
+            const isEn = body.classList.toggle('en-mode');
+            document.documentElement.classList.toggle('en-mode');
+            document.documentElement.lang = isEn ? 'en' : 'zh-TW';
+            const newLang = isEn ? 'en' : 'zh';
+            try { localStorage.setItem('liyon_lang', newLang); } catch(e) {}
+            updateCalendarLinks(newLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (savedLang === 'en') {
+                document.body.classList.add('en-mode');
+                updateCalendarLinks('en');
+            }
+        });
+    </script>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || !targetId.startsWith('#')) return;
+                e.preventDefault();
+                if (targetId === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    </script>
+
+    <!-- Email obfuscation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                document.querySelectorAll('[data-e]').forEach(function(el) {
+                    var parts = atob(el.getAttribute('data-e')).split('|');
+                    var addr = parts[0] + '@' + parts[1];
+                    var subj = el.getAttribute('data-s') || '';
+                    if (el.tagName === 'A') {
+                        el.href = 'mailto:' + addr + (subj ? '?subject=' + encodeURIComponent(subj) : '');
+                        // Only rewrite textContent on leaf <a> tags — don't wipe nested icon/title/<p> children
+                        if (el.children.length === 0 && (!el.textContent.trim() || el.textContent.includes('[at]'))) el.textContent = addr;
+                    } else {
+                        el.textContent = addr;
+                    }
+                });
+            } catch(e) {}
+        });
+    </script>
+
+</body>
 </html>
